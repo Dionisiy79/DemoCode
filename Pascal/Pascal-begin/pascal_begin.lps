@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="pascal_begin.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="4" Y="80"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="2" HistoryIndex="1">
+      <Position1>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="231" TopLine="77"/>
+      </Position1>
+      <Position2>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="80" Column="14" TopLine="64"/>
+      </Position2>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
