@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <!-- Методы добавления JS-кода в HTML-страницы -->
+    <script>
+        // JS-код можно писать прямо внутри тегов SCRIPT
+        // https://learn.javascript.ru/hello-world#teg-script
+    </script>
+    
+    <!-- Также можно загрузить код из внешнего файла. Такой вариант предпочтительнее, поскольку позволяет разделить HTML и JS-код
+         https://learn.javascript.ru/external-script  -->
+    <script src="js-begin.js">
+        // Если указан внешний скрипт, то код внутри тегов script выполнен не будет
+    </script>
+  
+    <!-- Три вида вызовов ВНЕШНЕГО скрипта
+         https://learn.javascript.ru/external-script#asinhronnye-skripty-defer-async -->
+    <script src=""></script>       <!-- с ожиданием выполнения -->
+    <script src="" async></script> <!-- асинхронно в произвольном порядке в процессе загрузки html-страницы (не работает в IE9-) -->
+    <script src="" defer></script> <!-- асинхронно в указанном порядке после (!) загрузки всей html-страницы -->
+    
+    <script src="" async defer></script> <!-- Гибридная форма вызова: в IE9- сработает defer, а в остальных браузерах async -->
+
+</body>
+</html>
