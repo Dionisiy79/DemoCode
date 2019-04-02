@@ -1409,92 +1409,229 @@ console.groupCollapsed("Функции как объекты");
 console.groupEnd("Функции как объекты");
 }
 
-{/* ОБЪЕКТНО-ОРИЕНТИРОВАННОЕ ПРОГРАММИРОВАНИЕ */ 
-// console.groupCollapsed("Объектно-ориентированное программирование");
+/* ОБЪЕКТНО-ОРИЕНТИРОВАННОЕ ПРОГРАММИРОВАНИЕ */ 
+console.group("Объектно-ориентированное программирование");
 
-    /* Методы объектов (Методом называется функция, являющаяся свойством объекта)
-        https://learn.javascript.ru/object-methods  */
-        
-        // Объявление метода внутри объекта:
-            obj1 = { 
-                comment: 'Объект содержит комментарий и функцию вывода приветсвия.',
-                showHello: function() { console.log('Привет от метода !'); }
-            };
-            
-        // Вызов метода    
-            obj1.showHello();    // Вывод сообщения в консоль
-            obj1["showHello"](); // Альтернативная запись
-        
-        // Добавление и удаление методов:
-            obj1.showHello2 = function() { console.log('Привет от другого метода !'); };
-            obj1.showHello2();
-            delete obj1.showHello2;
-        
-        // Доступ к свойствам текущего объекта из метода:
-            // Ключевое слово this указывает на объект, в контексте которого вызван метод
-            obj1.showComment = function() { console.log(this.comment); };
-            obj1.comment = 'Теперь объект содержит комментарий и две функции.';
-            obj1.showComment();
-            
-            // Функцию используюущю this можно создавать без привязки к объекту
-            function printObj() { console.log(this); } // Функция вывода текущего объекта в консоль
-            obj1.print = printObj; // Если эту функцию записать в свойство, то она станет методом 
-            obj1.print(); // Метод выведет все содержимое объекта в консоль
-            console.log("Если функцию вызвать вне объекта то указатель this в ней - undefined: ");
-            printObj(); // undefined
+{/* Методы объектов (Методом называется функция, являющаяся свойством объекта)
+    https://learn.javascript.ru/object-methods  */
+console.groupCollapsed("Методы объектов");
     
-    /* Преобразование объектов к примитивным типам
-        https://learn.javascript.ru/object-conversion  */
+    // Объявление метода внутри объекта:
+        obj1 = { 
+            comment: 'Объект содержит комментарий и функцию вывода приветсвия.',
+            showHello: function() { console.log('Привет от метода !'); }
+        };
         
-        // Строковое преобразование (производится там где ожидается получение строки)
-            
-            // Если в объекте нет метода toString() то интерпретатор возвращает "[object Object]".
-            console.log("Простой объект при приведении к строке даёт " + {}); // "[object Object]"
-            
-            // Можно создать свой метод toString()
-            var pixel1 = { 
-                x: 3, y: 4, 
-                toString: function() { 
-                    return "Координаты точки: " + this.x + " и " + this.y;
-            }}
-            console.log("Объект pixel1 при строковом преобразовании возвращает строку: " + pixel1);
-            
-            pixel1.toString = function() { 
-                    return this.x + this.y;  // Метод может возвращать в т.ч. число или boolean
-            }
-            console.log("А теперь объект pixel1 возвращает число " + pixel1);
-
-        // Численное преобразование (производится там где ожидается получение числа)
-            
-            // Если у объекта нет встроенных методов преобразования, то объект преобразуется к NaN
-            b = + {} === NaN; // true
-            
-            // Если в объекте есть метод valueOf() то в первую очередь используется он:
-            var phones1 = { home: 89001234567, work: 88004567890, // В объекте - номера телефонов
-                valueOf: function() { return this.work; } // Возвращаем рабочий номер телефона
-            }
-            b = + phones1 === 88004567890; // true потому что phones1.valueOf() == 88004567890
-            
-            // При отсутствии метода valueOf() используется метод toString() (если он есть)
-            pixel1.x = 5; pixel1.y = 7;
-            b = + pixel1 === 12; // true  -  pixel1.toString() == 5 + 7 == 12
-            
-            /* При сложении объектов со строками в приоритете метод valueOf() (кроме Date-объектов, 
-               которые при любом сложении используют метод toString())  */
-            console.log("Cложение строки и объекта pixel1 использует valueOf(): " + pixel1);
-            console.log("Сложение строки и Date-объекта использует toString(): " + time1);
-            
-        // Логическое преобразование (производится там где ожидается получение boolean) 
+    // Вызов метода    
+        obj1.showHello();    // Вывод сообщения в консоль
+        obj1["showHello"](); // Альтернативная запись
+    
+    // Добавление и удаление методов:
+        obj1.showHello2 = function() { console.log('Привет от другого метода !'); };
+        obj1.showHello2();
+        delete obj1.showHello2;
+    
+    // Доступ к свойствам текущего объекта из метода:
+        // Ключевое слово this указывает на объект, в контексте которого вызван метод
+        obj1.showComment = function() { console.log(this.comment); };
+        obj1.comment = 'Теперь объект содержит комментарий и две функции.';
+        obj1.showComment();
         
-            b = !! {} === true;  // Любой объект при явном логическом преобразовании даёт true
-            
-            // При нестрогих сравнениях с boolean объект преобразуется к числу, а затем сравнивается 
-            phones1.work = 0;
-            if (phones1 == false)  console.log("Объект phones1 == false, т.к. 0 == false");  
-            if (phones1 !== false) console.log("Объект phones1 !== false, т.к. 0 !== false"); 
-            
-// console.groupEnd("Объектно-ориентированное программирование");
+        // Функцию используюущю this можно создавать без привязки к объекту
+        function printObj() { console.log(this); } // Функция вывода текущего объекта в консоль
+        obj1.print = printObj; // Если эту функцию записать в свойство, то она станет методом 
+        obj1.print(); // Метод выведет все содержимое объекта в консоль
+        console.log("Если функцию вызвать вне объекта то указатель this в ней - undefined: ");
+        printObj(); // undefined
+console.groupEnd("Методы объектов");
 }
+
+{/* Преобразование объектов к примитивным типам
+    https://learn.javascript.ru/object-conversion  */
+console.groupCollapsed("Преобразование объектов к примитивным типам");
+    
+    // Строковое преобразование (производится там где ожидается получение строки)
+        
+        // Если в объекте нет метода toString() то интерпретатор возвращает "[object Object]".
+        console.log("Простой объект при приведении к строке даёт " + {}); // "[object Object]"
+        
+        // Можно создать свой метод toString()
+        var pixel1 = { 
+            x: 3, y: 4, 
+            toString: function() { 
+                return "Координаты точки: " + this.x + " и " + this.y;
+        }}
+        console.log("Объект pixel1 при строковом преобразовании возвращает строку: " + pixel1);
+        
+        pixel1.toString = function() { 
+                return this.x + this.y;  // Метод может возвращать в т.ч. число или boolean
+        }
+        console.log("А теперь объект pixel1 возвращает число " + pixel1);
+
+    // Численное преобразование (производится там где ожидается получение числа)
+        
+        // Если у объекта нет встроенных методов преобразования, то объект преобразуется к NaN
+        b = + {} === NaN; // true
+        
+        // Если в объекте есть метод valueOf() то в первую очередь используется он:
+        var phones1 = { home: 89001234567, work: 88004567890, // В объекте - номера телефонов
+            valueOf: function() { return this.work; } // Возвращаем рабочий номер телефона
+        }
+        b = + phones1 === 88004567890; // true потому что phones1.valueOf() == 88004567890
+        
+        // При отсутствии метода valueOf() используется метод toString() (если он есть)
+        pixel1.x = 5; pixel1.y = 7;
+        b = + pixel1 === 12; // true  -  pixel1.toString() == 5 + 7 == 12
+        
+        /* При сложении объектов со строками в приоритете метод valueOf() (кроме Date-объектов, 
+           которые при любом сложении используют метод toString())  */
+        console.log("Cложение строки и объекта pixel1 использует valueOf(): " + pixel1);
+        console.log("Сложение строки и Date-объекта использует toString(): " + time1);
+        
+    // Логическое преобразование (производится там где ожидается получение boolean) 
+    
+        b = !! {} === true;  // Любой объект при явном логическом преобразовании даёт true
+        
+        // При нестрогих сравнениях с boolean объект преобразуется к числу, а затем сравнивается 
+        phones1.work = 0;
+        if (phones1 == false)  console.log("Объект phones1 == false, т.к. 0 == false");  
+        if (phones1 !== false) console.log("Объект phones1 !== false, т.к. 0 !== false"); 
+console.groupEnd("Преобразование объектов к примитивным типам");
+}
+
+{/* Конструкторы объектов (функции создающие новые функции-объекты)
+    https://learn.javascript.ru/constructor-new  */
+console.groupCollapsed("Конструкторы объектов");
+    
+    // Конструктором становится любая функция, вызванная с ключевым словом new
+    function emptyFunc() {};
+    var f1 = new emptyFunc();  // Создан пустой объект на основе пустой функции
+    
+    // Изменение свойст создаваемых объектов в конструкторе
+    function NulPixel(){  // Имена функций-конструкторов принято называть с большой буквы
+        this.x = 0; // this указывает на создаваемый конструктором объект
+        this.y = 0;
+        this.area = function() { return this.x * this.y; };  // Можно задать метод 
+    }
+    pixel1 = new NulPixel();  // Создан объект { x: 0, y: 0 }
+    pixel1.x = 342; pixel1.y = 453; 
+    console.log("Площадь экрана от угла до пикселя {342,453}: " + pixel1.area() + " пикселей");
+    
+    // Передача аргументов в конструкор 
+    function Pixel(x, y){ 
+        this.x = x; 
+        this.y = y;
+    }
+    pixel1 = new Pixel(3,4);  // Создан объект { x: 3, y: 4 }
+    
+    // Анонимный конструктор (может создать единичный объект проведя необходимые вычисления)
+    pixel1 = new function(){ var k=0;
+        for (var i=1;i<10;i++) k += Math.sqrt(i);
+        this.x = k; 
+        this.y = Math.round(k*2);
+    };
+
+    /* Комбинированные функции-конструкторы (могут как конструировать объекты, так и 
+       возвращать вместо сконструированного объекта другой объект или массив) 
+           https://learn.javascript.ru/constructor-new#pravila-obrabotki-return  */
+    
+    function CombyReturn(type){
+        this.comment = "Сконструирован новый объект";
+        switch(type) { 
+            // Простые типы возвращать нельзя.  Вместо них вернется новый объект this
+            case "string" :  return "Простая строка"; // Этот return проигнорируется
+            case "number" :  return 123;              // Этот return проигнорируется  
+            case "bool"   :  return true;             // Этот return проигнорируется 
+            case "array"  :  return [1,2,3];  // Возврат массива и прочих объектов сработает
+            case "object" :  return {p1:1, p2:2, p3:3}; 
+            case "function" :  return function(x) { console.log(x); }; 
+        }                       
+    }
+    console.log("Комбинированная функция-конструктор не умеет возвращать простые типы:");
+    console.log(new CombyReturn("string"));
+    console.log(new CombyReturn("number"));
+    console.log(new CombyReturn("bool"));
+    console.log("Но умеет возвращать вместо объекта this другой объект, массив или функцию:");
+    console.log(new CombyReturn("object"));
+    console.log(new CombyReturn("array"));
+    console.log(new CombyReturn("function"));
+console.groupEnd("Конструкторы объектов");
+}
+
+{/* Дескрипторы свойств (объект хранящий значение, параметры, геттеры и сеттеры свойства)
+	https://learn.javascript.ru/descriptors-getters-setters  */
+console.groupCollapsed("Дескрипторы свойств");
+
+    /* Запись значения свойства в дескриптор (используется метод Object.defineProperty() 
+       с тремя аргументами: целевой объект, имя свойства и объект-дескриптор свойства ) */
+        // Свойство дескриптора value хранит значение:
+        Object.defineProperty(pixel1, "x", { value: 320 }); // То же, что pixel1.x = 532
+        Object.defineProperty(pixel1, "z", { value: 0 });   // Можно задать новое свойство
+    
+    // Запрет изменения или удаления свойства
+        Object.defineProperty(pixel1, "z", { 
+            writable: false,     // запрет записи
+            сonfigurable: false  // запрет удаления через delete
+        }); // Можно задать новое свойство
+        
+    // Невидимость свойства для цикла for...in
+        Object.defineProperty(pixel1, "z", { enumerable: false }); 
+        console.log("Все свойства объекта pixel1 кроме невидимого свойства z: "); 
+        for (var k in pixel1) console.log(k); 
+    
+    /* Геттеры и сеттеры  (свойства выполняющие роль функций, т.е. выполняющие 
+       действия при чтении или записи свойства) */
+        Object.defineProperty(pixel1, "area", {
+           get: function() {   // Функция, возвращающая значение свойства .area
+               return this.x * this.y;
+           },
+           set: function(a) {   // Функция, срабатывающая при записи в свойство .area
+               this.y = a / this.x;
+           }
+        });
+        console.log("Площадь экрана от угла до pixel1: " + pixel1.area + " пикселей");
+        console.log("Координата pixel1.y равна " + pixel1.y);
+        pixel1.area = 76800;  // Это присвоение изменяет значение pixel1.y   
+        console.log("Координата pixel1.y теперь равна " + pixel1.y); 
+    
+    /* Обработка нескольких дескрипторов (через метод Object.defineProperties() с двумя 
+       аргументами - указатель на изменяемый объект  и объект из дескрипторов) */
+
+        Object.defineProperties(pixel1, { 
+            x: { value: 240 },
+            y: { configurable: false } /* Смена true на false сработает, но не наоборот:
+            z: { configurable: true }  // не сработает, т.к. свойство не configurable. */
+        });	// Для изменения false на true нужно использовать Object.defineProperty()
+    
+    // Получение списка свойств объекта
+        console.log("Видимые свойства объекта pixel1: ");
+        console.log(Object.keys(pixel1));
+        console.log("Все свойства объекта pixel1: ");
+        console.log(Object.getOwnPropertyNames(pixel1));
+    
+	// Копирование дескриптора в новый объект (для внесения изменений)
+        var descr1 = Object.getOwnPropertyDescriptor(pixel1, 'x'); // Скопировано в descr1
+		descr1.writable = false;    // Изменяем содержимое нового дескриптора
+		delete descr1.enumerable;  // При этом можно удалять его составляющие
+		delete pixel1.x; // Чтобы новый дескриптор не объединился со старым, свойство
+						 // нужно полностью удалить. Тогда удалится старый дескриптор.
+		Object.defineProperty(pixel1, 'x', descr1); // Применяем новый дескриптор 
+		console.log("Видимые свойства объекта pixel1 (свойство x теперь невидимо): ");
+		console.log(Object.keys(pixel1)); 
+
+	// Применение политик изменения ко всем объекту:
+	Object.preventExtensions(pixel1); // Запрет расширения объекта новыми свойствами
+	Object.seal(pixel1);   // Опечатывает набор свойств, но позволет менять их значения 
+	Object.freeze(pixel1); // Замораживает все свойства вместе с их значениями
+	
+	// Проверка соответствия объекта политикам изменения:
+	if (! Object.isExtensible(pixel1)) console.log("Объект не расширяемый."); 
+	if (Object.isSealed(pixel1)) console.log("Объект опечатан.");
+	if (Object.isFrozen(pixel1)) console.log("Объект заморожен.");
+console.groupEnd("Дескрипторы свойств");
+}    
+console.groupEnd("Объектно-ориентированное программирование");
+
 
 
 
