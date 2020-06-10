@@ -127,45 +127,45 @@ function isOldBrowser() { // Функция проверки совместим�
 		document.write('У documentElement нет элемента-родителя <br>');
 	} ; 
 	
-	node1 = list1.previousElementSibling; // Ссылка на предыдущий элемент (<p>)
-	node1.insertAdjacentHTML("afterbegin"  ,"Предыдущий элемент (previousElementSibling);");
+		node1 = list1.previousElementSibling; // Ссылка на предыдущий элемент (<p>)
+		node1.insertAdjacentHTML("afterbegin"  ,"Предыдущий элемент (previousElementSibling);");
+	
+		node1 = list1.nextElementSibling; // Ссылка на следующий элемент (тоже <p>)
+		node1.insertAdjacentHTML("afterbegin"  ,"Следующий элемент (nextElementSibling);");
+	
+		node1 = list1.firstElementChild; // Ссылка на первый элемент-потомок (<li>)
+		node1.insertAdjacentHTML("afterbegin"  ,"Первый элемент-потомок (firstElementChild);");
+	
+		node1 = list1.lastElementChild; // Ссылка на последний элемент-потомок (<li>)
+		node1.insertAdjacentHTML("afterbegin"  ,"Последний элемент-потомок (lastElementChild);");
 
-	node1 = list1.nextElementSibling; // Ссылка на следующий элемент (тоже <p>)
-	node1.insertAdjacentHTML("afterbegin"  ,"Следующий элемент (nextElementSibling);");
-
-	node1 = list1.firstElementChild; // Ссылка на первый элемент-потомок (<li>)
-	node1.insertAdjacentHTML("afterbegin"  ,"Первый элемент-потомок (firstElementChild);");
-
-	node1 = list1.lastElementChild; // Ссылка на последний элемент-потомок (<li>)
-	node1.insertAdjacentHTML("afterbegin"  ,"Последний элемент-потомок (lastElementChild);");
-
-	// Перебор дочерних элементов для list1
-	for (var i=0; i < list1.children.length; ++i)  
-		list1.children[i].insertAdjacentHTML("afterbegin"  ," * ");
+		// Перебор дочерних элементов для list1
+		for (var i=0; i < list1.children.length; ++i)  
+			list1.children[i].insertAdjacentHTML("afterbegin"  ," * ");
 	
    // Обход дерева узлов (не только элементов, но и текстовых, комментариев и пр.)
 	node1 = list1.parentNode; // Ссылка на узел-родитель (в нашем случае <div>)
 	node1.insertAdjacentHTML("afterbegin"  ,"Родительский узел (parentNode)<br>");
-	if (document.documentElement.parentNode == document) { // true т.к. это вершиныа дерева узлов
+	if (document.documentElement.parentNode == document) { // true т.к. это вершина дерева узлов
 	  document.write('<br>У documentElement родительский узел document');
 	} ; 
 
-	node1 = list1.previousSibling; // Ссылка на предыдущий узел (<p>)
-	node1.insertAdjacentHTML("afterbegin"  ,"Предыдущий узел (previousSibling); ");
-
-	node1 = list1.nextSibling; // Ссылка на следующий узел (тоже <p>)
-	node1.insertAdjacentHTML("afterbegin"  ,"Следующий узел (nextSibling); ");
-
-	node1 = list1.firstChild; // Ссылка на первый узел-потомок (<li>)
- 	node1.textContent += " Первый узел-потомок (firstChild);"; 	// Для текстовых узлов не работает 
-																// метод insertAdjacentHTML
-	node1 = list1.lastChild; // Ссылка на последний узел-потомок (<li>)
- 	node1.textContent += " Последний узел-потомок (lastChild);";
-
-    // Перебор дочерних узлов для list1
-	for (var i=0; i < list1.childNodes.length; ++i)
-		list1.childNodes[i].textContent += " # ";
-  
+		node1 = list1.previousSibling; // Ссылка на предыдущий узел (<p>)
+		node1.insertAdjacentHTML("afterbegin"  ,"Предыдущий узел (previousSibling); ");
+	
+		node1 = list1.nextSibling; // Ссылка на следующий узел (тоже <p>)
+		node1.insertAdjacentHTML("afterbegin"  ,"Следующий узел (nextSibling); ");
+	
+		node1 = list1.firstChild; // Ссылка на первый узел-потомок (<li>)
+		node1.textContent += " Первый узел-потомок (firstChild);"; 	// Для текстовых узлов не работает 
+																	// метод insertAdjacentHTML
+		node1 = list1.lastChild; // Ссылка на последний узел-потомок (<li>)
+		node1.textContent += " Последний узел-потомок (lastChild);";
+	
+		// Перебор дочерних узлов для list1
+		for (var i=0; i < list1.childNodes.length; ++i)
+			list1.childNodes[i].textContent += " # ";
+	
 	// Проверка, является ли узел потомком:  
 	if (document.body.contains(node1)) document.write("<br>node1 - потомок body")
 	if (!document.head.contains(node1)) document.write(" и не потомок head.")
@@ -174,9 +174,12 @@ function isOldBrowser() { // Функция проверки совместим�
   { /* Работа с атрибутами HTML-элементов через свойства DOM-объектов 
 	   https://learn.javascript.ru/dom-attributes-and-properties */
 	document.write("<h3> Работа с атрибутами HTML-элементов через свойства DOM-объектов </h3>");
-	
+
+	// В свойстве tagName можно считать тег элемента. Это свойство только для чтения.
+		document.write("Тег элемента: " + div3.tagName);
+
 	// Для стандартных(!) HTML-атрибутов автоматически создаётся одноимённое DOM-свойство 
-		document.write("ID второго параграфа: " + div3.children[1].id); // par2
+		document.write("<br>ID второго параграфа: " + div3.children[1].id); // par2
 		div3.children[1].id = "par2b";
 		document.write("<br> ID второго параграфа изменилось: " + div3.children[1].id); // par2b
 	
@@ -211,14 +214,14 @@ function isOldBrowser() { // Функция проверки совместим�
 		for (var i=0; i < div3.attributes.length; ++i)  
 			document.write("<br>" + div3.attributes[i].name + " : " + div3.attributes[i].value);
   }
-
+  
   { /* Модификация классов 
 	   https://learn.javascript.ru/styles-and-classes */
 	document.write("<h3> Модификация классов </h3>");
 	
 	var div2 = document.createElement('div');  
     document.body.appendChild(div2);
-
+		
 	// Строка с именами классов хранится в свойстве className:
 		div2.className = "Class1 Class2"; // Это свойство можно переприсваивать
 		div2.innerHTML += "Текущие имена классов: " + div2.className;
@@ -325,14 +328,17 @@ function isOldBrowser() { // Функция проверки совместим�
 			document.write("<br> Появился элемент с именем name1"); // true
 		
 	// Проверка на соответствие элемента CSS-селектору методом .matches()
+	if (!isOldBrowser()) // В некоторых старых браузерах метод имеет другое имя
 		if (p3.matches(".c1")) document.write('<br>Параграф 3 удовлетворяет селектору ".c1".');
 	
 	// Поиск ближайшего предка, удовлетворяющего CSS-селектору методом .closest()
+	if (!isOldBrowser()) { // Метод не поддерживается в Opera Presto
 		p3.closest("div").style.border = "1px solid blue";
 		document.write('<br>Родительский блок, ближайший к параграфу 3, выделен синей границей.');	
 		// Если исходный элемент удовлетворяет CSS-селектору, то возвращается он сам:
 		p3.closest(".c1").style.border = "1px solid red";
 		document.write('<br>Параграф 3 оказался "ближайшим" сам к себе и выделен красной границей.');	
+	}	
   }
   
   { /* Изменение размеров и расположения блоков
@@ -341,7 +347,8 @@ function isOldBrowser() { // Функция проверки совместим�
 	
 	document.write('<div id="box1" style="width: 100px; height: 80px;');
 	document.write('border: 5px solid #ce8; padding: 10px; overflow: auto;"> </div>' );
-	   
+
+	document.write("box1 позиционируется относительно предка: " + box1.offsetParent.tagName);
   }
 }
 
