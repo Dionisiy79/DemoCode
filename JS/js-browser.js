@@ -3,7 +3,7 @@ function isOldBrowser() { // Функция проверки совместим�
     if (typeof(document.body.prepend)=="function") return false; 
         else return true;
     }
-
+	
 {/* МОДИФИКАЦИЯ ДОКУМЕНТА */
   // https://learn.javascript.ru/modifying-document 
   
@@ -59,12 +59,6 @@ function isOldBrowser() { // Функция проверки совместим�
 			p1.insertAdjacentHTML("beforeend"  ,"<b> Конец </b>");
 			p1.insertAdjacentHTML("afterend"   ,"<b> Послесловие </b><hr>");
 		
-			// Добавление в DOM текста
-			p1.insertAdjacentText("beforebegin"," * ");
-			p1.insertAdjacentText("afterbegin" ," * ");
-			p1.insertAdjacentText("beforeend"  ," * ");
-			p1.insertAdjacentText("afterend"   ," * ");
-				
 			// Устаревший, но надёжный метод вставки insertBefore имеет два аргумента:
 			// вставляемый элемент и элемент перед которым нужно произвести вставку
 			var span3 = document.createElement('span'); 
@@ -90,12 +84,18 @@ function isOldBrowser() { // Функция проверки совместим�
             p1.prepend(span2); 
             p1.append(span2);  
             p1.after(span2);   
-            
+
             // Альтернативный метод вставки HTML-элемента
             p1.insertAdjacentElement("beforebegin",span2);
             p1.insertAdjacentElement("afterbegin" ,span2);
             p1.insertAdjacentElement("beforeend"  ,span2);
             p1.insertAdjacentElement("afterend"   ,span2);
+
+			// Добавление в DOM текста
+			p1.insertAdjacentText("beforebegin"," * ");
+			p1.insertAdjacentText("afterbegin" ," * ");
+			p1.insertAdjacentText("beforeend"  ," * ");
+			p1.insertAdjacentText("afterend"   ," * ");
             
             // Замена одного элемента на другой
             div1c.replaceWith(span2);
@@ -121,7 +121,7 @@ function isOldBrowser() { // Функция проверки совместим�
 	//Создадим демонстрационный html-код с парой параграфов и списком
 	document.body.insertAdjacentHTML('beforeend', 
 	    '<div><p></p><ol id="list1"><li></li><li></li><li></li></ol><p></p></div>');
-	node1 = list1;  // Можно обратиться к элементу по id - он совпадает с именем переменной
+	node1 = list1;  // Можно обратиться к элементу через имя переменной, совпадающее с ID
 	node1.insertAdjacentHTML("afterbegin"  ,'Текущий элемент (доступ по id "list1")');
 
 	// Обход дерева элементов
@@ -146,29 +146,33 @@ function isOldBrowser() { // Функция проверки совместим�
 	// Перебор дочерних элементов для list1
 	for (var i=0; i < list1.children.length; ++i)  
 		list1.children[i].insertAdjacentHTML("afterbegin"  ," * ");
-
+	
    // Обход дерева узлов (не только элементов, но и текстовых, комментариев и пр.)
 	node1 = list1.parentNode; // Ссылка на узел-родитель (в нашем случае <div>)
 	node1.insertAdjacentHTML("afterbegin"  ,"Родительский узел (parentNode)<br>");
 	if (document.documentElement.parentNode == document) { // true т.к. это вершиныа дерева узлов
-	  document.write('У documentElement родительский узел document');
+	  document.write('<br>У documentElement родительский узел document');
 	} ; 
 
 	node1 = list1.previousSibling; // Ссылка на предыдущий узел (<p>)
-	node1.insertAdjacentText("afterbegin"  ,"Предыдущий узел (previousSibling); ");
+	node1.insertAdjacentHTML("afterbegin"  ,"Предыдущий узел (previousSibling); ");
 
 	node1 = list1.nextSibling; // Ссылка на следующий узел (тоже <p>)
-	node1.insertAdjacentText("afterbegin"  ,"Следующий узел (nextSibling); ");
+	node1.insertAdjacentHTML("afterbegin"  ,"Следующий узел (nextSibling); ");
 
 	node1 = list1.firstChild; // Ссылка на первый узел-потомок (<li>)
  	node1.textContent += " Первый узел-потомок (firstChild);"; 	// Для текстовых узлов не работает 
-																// метод insertAdjacentText
+																// метод insertAdjacentHTML
 	node1 = list1.lastChild; // Ссылка на последний узел-потомок (<li>)
  	node1.textContent += " Последний узел-потомок (lastChild);";
 
     // Перебор дочерних узлов для list1
 	for (var i=0; i < list1.childNodes.length; ++i)
 		list1.childNodes[i].textContent += " # ";
+  
+	// Проверка, является ли узел потомком:  
+	if (document.body.contains(node1)) document.write("<br>node1 - потомок body")
+	if (!document.head.contains(node1)) document.write(" и не потомок head.")
   }
 
   { /* Работа с атрибутами HTML-элементов через свойства DOM-объектов 
@@ -269,8 +273,79 @@ function isOldBrowser() { // Функция проверки совместим�
 	
 	// Стереть все инлайн-стили и прописать несколько новых можно через свойство cssText:
 	div3.style.cssText = "color: blue; background-color: #ffa;";
+  }
+
+  { /* Доступ к элементам через ID и классы
+	   https://learn.javascript.ru/searching-elements-dom */
+	document.write("<h3> Доступ к элементам через ID и классы </h3>");  
+
+	document.write('<div><p class="c1">Текст 1</p>'); // Демонстрационный html-код
+	document.write('<p class="c1">Текст 2</p><p id="p3-id"class="c1">Текст 3</p></div>');  
 	
+	// Метод document.getElementById("идентификатор") даёт ссылку на элемент с указанным ID
+		var p3 = document.getElementById("p3-id");  // Элемент с идентификатором "p3-id"
+		p3.style.color = "red"; 
+		document.write('Текст параграфа c ID "p3-id" теперь красный.');
 	
+	// Метод .querySelectorAll("селектор") возвращает коллекцию элементов удовлетворяющих CSS-селектору
+		var textcollection = document.querySelectorAll(".c1"); // Все элементы с селектором ".c1"
 	
+		for (var i=0; i < textcollection.length; ++i)  
+			textcollection[i].style.backgroundColor = "#afa";
+		document.write('<br>Все параграфы помечены салатовым фоном.');	
+	
+		// Поиск можно делать не по всему документу, а среди потомков конкретного элемента:
+		var d = p3.parentNode; 
+		textcollection = d.querySelectorAll(".c1"); // Поиск внутри блока, родительского для p3
+	
+	// Если нужен только первый элемент этой коллекции, то лучше использовать document.querySelector
+		document.querySelector(".c1").style.fontStyle = "italic"; 
+		document.write('<br>В первом параграфе теперь наклонный текст.');	
+	
+	// .querySelectorAll() возвращает коллекцию, которая в дальнейшем не меняется с изменением DOM:
+		var n = textcollection.length; // Количество параграфов с классом c1 в коллекции
+		document.write('<p class="c1">Новый параграф</p>'); // Добавили ещё один параграф .c1
+		if (n == textcollection.length) document.write("Коллекция не поменялась"); // true
+	
+	// Методы серии getElementsBy возвращают коллекции, которые меняются вместе с DOM:
+		var cTag = document.getElementsByTagName('p'); // Элементы с указанным тегом
+		var cClass = document.getElementsByClassName('c1'); // Элементы с указанным классом
+		// Элементы с атрибутом name равным указанной строке
+		var cName = document.getElementsByName('name1');
+		
+		// Запоминаем количество элементов в коллекции
+		var nTag   = cTag.length;	
+		var nClass = cClass.length;	
+		var nName  = cName.length;	
+	
+		document.write('<p class="c1" name="name1">Новый параграф</p>'); // Добавили ещё параграф
+	
+		// Демонстрация того, что все три коллекции после добавления параграфа поменялись:
+		if (nTag != cTag.length) 
+			document.write("Количество тегов p поменялось"); // true
+		if (nClass != cClass.length) 
+			document.write("<br> Количество элементов .c1 поменялось"); // true
+		if (nName != cName.length) 
+			document.write("<br> Появился элемент с именем name1"); // true
+		
+	// Проверка на соответствие элемента CSS-селектору методом .matches()
+		if (p3.matches(".c1")) document.write('<br>Параграф 3 удовлетворяет селектору ".c1".');
+	
+	// Поиск ближайшего предка, удовлетворяющего CSS-селектору методом .closest()
+		p3.closest("div").style.border = "1px solid blue";
+		document.write('<br>Родительский блок, ближайший к параграфу 3, выделен синей границей.');	
+		// Если исходный элемент удовлетворяет CSS-селектору, то возвращается он сам:
+		p3.closest(".c1").style.border = "1px solid red";
+		document.write('<br>Параграф 3 оказался "ближайшим" сам к себе и выделен синей границей.');	
+  }
+  
+  { /* Изменение размеров и расположения блоков
+	   https://learn.javascript.ru/size-and-scroll */
+	document.write("<h3> Изменение размеров и расположения блоков </h3>");
+	
+	document.write('<div id="box1" style="width: 100px; height: 80px;');
+	document.write('border: 5px solid #ce8; padding: 10px; overflow: auto;"> </div>' );
+	   
   }
 }
+
