@@ -505,8 +505,7 @@ function wrn(s) { wr("<br>" + s); }   // То же самое, но с ново�
 		var handleObj = {
 			handleEvent: function(eventObj) { 
 				if (eventObj.clientX % 2 == 0) this.oddAlert(); 
-				else this.evenAlert(); 
-				alert(this.innerHTML);},
+				else this.evenAlert();},
 			// В объекте можно разнести код по разным методам:	
 			evenAlert: function() { alert("X-координата - нечётная."); },
 			oddAlert: function() { alert("X-координата - чётная."); }
