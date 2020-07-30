@@ -635,7 +635,7 @@ function wrn(s) { wr("<br>" + s); }   // То же самое, но с ново�
 	  https://learn.javascript.ru/default-browser-action   */
 			wrn('<a href="/" onclick="event.preventDefault()">Эта ссылка не работает</a>');
 		
-		/* При назначении обработчика с помощью атрибута можно запретить стандартное действие 
+		/* При назначении обработчика с помощью атрибута(!) можно запретить стандартное действие 
 		   просто вернув false из функции. */
 			wrn('<a href="/" onclick="return false">Эта ссылка тоже не работает</a> <br>');
 		
@@ -755,7 +755,7 @@ function wrn(s) { wr("<br>" + s); }   // То же самое, но с ново�
   { /* События клавиатуры
 		https://learn.javascript.ru/keyboard-events */
 		wr('<br style="clear:both;"> <h3>Нажатия на клавиатуру </h3> <div id="kbinfo"></div>');
-		wr('<input type="text" placeholder="Тут можно набирать текст" id="kbinput">');
+		wr('<input type="text" placeholder="Редактируйте меня" id="kbinput">');
 
 		var kbmsg = function(event) { 
 			kbinfo.innerHTML += "Событие " + event.type +    // Название события
@@ -784,8 +784,8 @@ function wrn(s) { wr("<br>" + s); }   // То же самое, но с ново�
   
 		/* События фокуса на элементе 
 			https://learn.javascript.ru/focus-blur  */
-			wr('<br style="clear:both;"> <h4>События фокусировки </h4> <div id="focusinfo"></div>');
-			wr('<input type="text" placeholder="Нажмите сюда" id="focusinput">');
+			wr('<br style="clear:both;"> <div id="focusinfo"></div>');
+			wr('<input type="text" placeholder="Редактируйте меня" id="focusinput">');
 		
 			var focusmsg = function(event) { 
 				focusinfo.innerHTML += "Событие " + event.type + 
@@ -822,6 +822,38 @@ function wrn(s) { wr("<br>" + s); }   // То же самое, но с ново�
 				focusinput.addEventListener("cut", focusmsg); 
 				focusinput.addEventListener("copy", focusmsg); 
 				focusinput.addEventListener("paste", focusmsg); 
+  }
+
+  { /* Событие отправки формы */
+		// https://learn.javascript.ru/forms-submit 
+
+	  		wr('<h3>Событие отправки формы </h3> <div id="submitinfo"></div>');
+			wr('<form id="submitform"> <input type="text" value="Тут нужно нажать Enter"><br>');
+			wr('<input id="submitbutton" type="submit" value="Отправить"></form>');
+			
+			var submitmsg = function(event) { 
+				submitinfo.innerHTML += "Событие " + event.type + 
+								" на элементе "+ event.target.id + "<br>"; 
+				if (event.type == "submit") {
+					event.preventDefault(); // Предотвращаем отправку формы на сервер
+				}
+			} 				
+			
+		// Событие submit срабатывает при попытке отправки формы:
+			submitform.addEventListener("submit", submitmsg); 
+		
+		// Событие клика генерируется даже если вместо клика в форме была нажата клавиша Enter:
+			submitform.addEventListener("click", submitmsg); 
+		
+		// Метод .submit отправляет форму программно
+			wr('<form id="codeform" action = "https://ya.ru" method="GET"> </form>');
+			wr('Ведите код 1234: <input id="codeinput" type="text">');
+			
+			codeinput.oninput = function () {
+				if (codeinput.value == "1234") {
+					codeform.submit();  // Программная отправка формы в случае правильного кода
+				}
+			}
   }
 }
 
