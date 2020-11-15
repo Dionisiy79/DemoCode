@@ -90,7 +90,6 @@
 		print("<br>"); // Можно сделать вызов как функцию, при этом print 
 	  ?>
   </div> 
-  
   <div>    <h3> ВВОД ДАННЫХ ЧЕРЕЗ GET/POST ЗАПРОСЫ </h3>
 	    
 	<!-- Самый простой способ ввести данные, которые сможет прочитать php-скрипт - это
@@ -126,7 +125,6 @@
 		?>	 
 		
   </div>
-
   <div>    <h3> ПАУЗА ВЫПОЛНЕНИЯ СКРИПТА </h3>
 	  <?php   	  
 		sleep(1);       // Пауза в 1 секунду;  Эта функция возвращает 0 при успешном выполнении
@@ -271,7 +269,6 @@
 			echo "<br>Cодержимое переменной: ";   print_r($numb1);  
 	?>  
   </div>
-  
   <div>    <h3> ОПЕРАЦИИ </h3>
 	<?php  // https://www.php.net/manual/ru/language.operators.php  	  
 	
@@ -403,7 +400,6 @@
 	?>
 	</div>	
   </div> 
-
   <div>    <h3> ПРИВЕДЕНИЕ ПРОСТЫХ ТИПОВ ПРИ ОПЕРАЦИЯХ </h3>
 	<div>     <h4> Преобразование в строку </h4>
 	<?php   	  
@@ -594,7 +590,6 @@
 	?>
 	</div>     
   </div> 
-
   <div>    <h3> МАТЕМАТИЧЕСКИЕ ФУНКЦИИ И КОНСТАНТЫ </h3>
 	<?php 	// https://www.php.net/manual/ru/math.constants.php
 	    $numb1 = M_PI;  // Число Пи == 3.141592653589793
@@ -624,7 +619,6 @@
 		$numb1 = atan2(-5,5);  // для угла 315 градусов равен Пи/4
 	?>
   </div> 
-
   <div>    <h3> РАБОТА СО СТРОКАМИ </h3>
 	<div>     <h4> Кодировки и длина строки </h4>
 		<!-- https://www.php.net/manual/ru/book.strings.php 
@@ -792,7 +786,6 @@
         proc2(); // Вызов функции можно делать до объявления функции 
 	?> 		
   </div>   
-
   <div>    <h3>  ОБЛАСТЬ ВИДИМОСТИ ПЕРЕМЕННЫХ СПОСОБЫ ИНИЦИАЛИЗАЦИИ </h3>
 	<?php   	  
         function proc2() { 
@@ -828,7 +821,6 @@
         echo "<br> Третий вызов: "; proc3(); // "s2: Начальное значение + дополнение + дополнение"
 	?>
   </div>   
-
   <div>    <h3>  РАБОТА С АРГУМЕНТАМИ ФУНКЦИИ </h3>
 	<?php   	  
 	### ДОСТУП К НЕОБЪЯВЛЕННЫМ АРГУМЕНТАМ В ТЕЛЕ ФУНКЦИИ ###
@@ -957,7 +949,6 @@
 			if (is_callable($f)) echo "<br>Функция $f может быть вызвана.";
 	?>
   </div>
-
   <div>    <h3> ЗАМЫКАНИЯ И ДРУГИЕ ОСОБЕННОСТИ РАБОТЫ С ФУНКЦИЯМИ </h3>
 	<?php  				
 
@@ -1133,7 +1124,6 @@
 		
 	?>
   </div>   
-
   <div>    <h3> БЕЗУСЛОВНЫЕ УПРАВЛЯЮЩИЕ КОММАНДЫ </h3>
 	<?php  // https://www.php.net/manual/ru/control-structures.goto.php 	  
 	
@@ -1151,7 +1141,6 @@
 		} 
 	?>
   </div>   
-  
   <div>    <h3> ЦИКЛЫ </h3>
 	<?php  
 
@@ -1217,7 +1206,6 @@
         } 
 	?>
   </div>   
-  
   <div>    <h3> РЕКУРСИЯ </h3>
 	<?php // В PHP рекурсие имеет ограничение - не более 200 итераций
     
@@ -1282,7 +1270,6 @@
  	
 	?>
   </div>   
-
   <div>    <h3> ПЕРЕХВАТ ИСКЛЮЧЕНИЙ И ОШИБОК ВЫПОЛНЕНИЯ </h3>
 	<?php   /*  http://phpfaq.ru/debug/error_reporting
 		        https://www.php.net/manual/ru/language.errors.php
@@ -1352,7 +1339,6 @@
         }
 	?>
   </div>   
-
   <div>    <h3> ДИНАМИЧЕСКОЕ СОЗДАНИЕ КОДА И ДАННЫХ </h3>
 	<?php 
 
@@ -1691,9 +1677,7 @@
 
 <div> <h2> ОБЪЕКТНО-ОРИЕНТИРОВАННОЕ ПРОГРАММИРОВАНИЕ </h2>
 
-  <div>    <h3> КЛАССЫ И ОБЪЕКТЫ </h3>
-	
-	<div>     <h4> Создание классов и объектов. </h4>
+  <div>    <h3> СОЗДАНИЕ КЛАССОВ И ОБЪЕКТОВ </h3>
 	  <!-- https://www.php.net/language.oop5 -->
 	<?php	
 
@@ -1724,18 +1708,18 @@
 				private   const CON3 = 3;
 			}
 
-		### Объявление статических свойств класса ###
-			class ClassStat { // Стат. свойство хранит изменяемое значение общее для всего класса
-				public    static $stat1 = 5;   
-				protected static $stat2 = 6, $stat2b = 0; // Можно задать несколько - через запятую
-				private   static $stat3; // Можно задавать неинициализированное стат.свойство
-			}
-		
 		### Объявление свойств класса ###
 			class ClassOpt { 
 				public    $numb1 = 5;   
 				protected $numb2 = 6, $numb2b = 0; // Можно задать несколько свойств через запятую
 				private   $numb3; // Можно задавать неинициализированное свойство
+			}
+
+		### Объявление статических свойств класса ###
+			class ClassStat { // Стат. свойство хранит изменяемое значение общее для всего класса
+				public    static $stat1 = 5;   
+				protected static $stat2 = 6, $stat2b = 0; // Можно задать несколько - через запятую
+				private   static $stat3; // Можно задавать неинициализированное стат.свойство
 			}
 		
 		### Объявление методов класса ###
@@ -1744,9 +1728,16 @@
 				protected function showHello2() { echo "<br>Hello"; } 
 				private   function showHello3() { echo "<br>Hello"; } 
 			}
+
+		### Объявление статических методов класса ###
+			class ClassStatHello { // Стат. метод - метод вызываемый без создания экземпляра класса
+				public    static function showHello1() { echo "<br>Static Hello"; } 
+				protected static function showHello2() { echo "<br>Static Hello"; } 
+				private   static function showHello3() { echo "<br>Static Hello"; } 
+			}
 	?>
-	</div>
-	<div>     <h4> Использование объектов. </h4>
+  </div>
+  <div>    <h3> ИСПОЛЬЗОВАНИЕ ОБЪЕКТОВ </h3>
 	  <!-- https://www.php.net/language.oop5 -->
 	<?php	
 		
@@ -1804,33 +1795,39 @@
 			$obj1->showHello1(); // Защищённые и приватные методы так вызывать нельзя
 			$methodName = "showHello1";
 			$obj1->$methodName(); // Альтернативный вызов через переменную, хранящую имя метода
+
+		### Доступ к публичным статическим методам ###
+			$obj1 = new ClassStatHello();
+			ClassStatHello::showHello1(); // Защищённые и приватные стат.методы так вызывать нельзя
+			$className = "ClassStatHello";
+			$obj1->$methodName(); // Альтернативный вызов через переменную, хранящую имя стат.метода
 			
-			// Создавать новые методы динамически нельзя. Но можно записать в свойство функцию
+		// Создавать новые методы динамически нельзя. Но можно записать в свойство функцию
 			$obj2->newFunc = function() {echo "<br>Это новая функция объекта";}; 
 			echo ($obj2->newFunc)(); // Для вызова функции объекта нужно обрамлять её скобками
 			$func = $obj2->newFunc; echo $func(); // Либо сохранять в переменную
 
 		### Доступ к константам и стат.свойствам класса из метода объекта ###
-		class ClassConStat { 
-			public const CON1 = 5;
-			public static $stat1 = 1;
-			public function showCS() {  
-				echo "<br> Константа CON1: " . self::comment .
-				     " Статическое свойство stat1: " . self::$stat1; 
-			} // Ключевое слово self указывает на класс объекта, в контексте которого вызван метод
-		}
+			class ClassConStat { 
+				public const CON1 = 5;
+				public static $stat1 = 1;
+				public function showCS() {  
+					echo "<br> Константа CON1: " . self::comment .
+						" Статическое свойство stat1: " . self::$stat1; 
+			}} // Ключевое слово self указывает на класс объекта, в контексте которого вызван метод
+		
 		
 		### Доступ к свойствам текущего объекта из метода объекта ###
-		class Comment1 { 
-			public $comment = 5;
-			public function showComment() {  
-				echo "<br>Свойство comment: " . $this->comment; 
-			} // Ключевое слово this указывает на объект, в контексте которого вызван метод
-		}
+			class Comment1 { 
+				public $comment = 5;
+				public function showComment() {  
+					echo "<br>Свойство comment: " . $this->comment; 
+				} // Ключевое слово this указывает на объект, в контексте которого вызван метод
+			}
 
 	?>
-	</div>
-	<div>     <h4> Преобразование объектов в примитивные типы. </h4>
+  </div>
+  <div>    <h3> ПРЕОБРАЗОВАНИЕ ОБЪЕКТОВ В ПРИМИТИВНЫЕ ТИПЫ </h3>
 	<?php	
 		### Строковое преобразование (производится там где ожидается получение строки) ###
 		
@@ -1853,8 +1850,8 @@
 		### Логическое преобразование (производится там где ожидается получение boolean) ###
 			if ($pixel1) {echo "<br>Объект существует!";} // Объекты преобразуются к TRUE
 	?>
-	</div>
-	<div>     <h4> Сериализация объектов. </h4>
+  </div>
+  <div>    <h3> СЕРИАЛИЗАЦИЯ ОБЪЕКТОВ </h3>
 	<?php	
 		### Простая сериализация объекта "как есть" ###
 			$str1 = serialize($pixel1);   // Сохраняются в строку свойства и имя класса объекта
@@ -1896,8 +1893,8 @@
 			$vcard1b = json_decode($str2);
 				echo "<br>Восстановленный из JSON объект: "; print_r($vcard1b); 
 	?>
-	</div>
-	<div>     <h4> Конструкторы и деструкторы. </h4>
+  </div>
+  <div>    <h3> КОНСТРУКТОРЫ И ДЕСТРУКТОРЫ </h3>
 	<?php	
 		/* Конструктор и деструктор - это магические методы, которые автоматически вызываются при 
 		   создании и перед самым уничтожением объекта. */
@@ -1931,13 +1928,80 @@
 			}}
 			$pix1 = new PixelArg(5,6); // Создан пиксель с координатами (3,4)
 			echo "<br>Конструктором создан пиксель: "; print_r($pix1);
-		
-
-		
 	?>
-	</div>
+  </div>
+  <div>    <h3> НАСЛЕДОВАНИЕ </h3>
+	<?php	
+		### СОЗДАНИЕ ДОЧЕРНЕГО КЛАССА ###
+ 			class EmptyParent {}
+			class EmptyChild extends EmptyParent {}     // Дочерний класс (расширяет родительский)
+			class EmptyGrandChild extends EmptyChild {} // Можно выстраивать иерархию потомков
+		
+		### НАСЛЕДОВАНИЕ НЕ ПЕРЕОПРЕДЕЛЁННЫХ СВОЙСТВ И МЕТОДОВ ###
+			class ParentClass1 { // В потомках доступно всё что определено как public и protected
+				protected const CON = 1;
+				protected static $statOpt  = 1;
+				public $opt = 1;
+				protected static function showStatOpt() {return self::$statOpt;}
+				public function showOpt() { return $this->opt; }
+				public function showInfo() { echo "<br>Я храню ".self::CON . self::$statOpt . 
+				    $this->opt . self::showStatOpt() . $this->showOpt();  // по умолчанию == 11111
+			}}
+			class ChildClass1 extends ParentClass1 {}   
+			$child1 = new ChildClass1(); // Объект унаследовал всё из родительского класса
+			$child1->showInfo(); // "Я храню 11111"
 
-  </div>   
+		### ПЕРЕОПРЕДЕЛЕНИЕ СВОЙСТВ И МЕТОДОВ В ДОЧЕРНЕМ КЛАССЕ ###
+			class ChildClass2 extends ParentClass1 {
+				public const CON = 2; // Можно расширять область видимости, НО не сужать
+				protected static $statOpt  = 2;
+				public $opt = 2;
+				public static function showStatOpt() {return self::$statOpt;}
+			}
+			$child2 = new ChildClass2(); // Объект унаследовал только то что не переопределено
+			/* Метод showInfo не переопределён - поэтому используется родительский. А это значит что 
+			   он вызывается в контексте родительского класса и все обращения self:: из этого метода 
+			   обращаются к своем классу ParentClass1 */
+			$child2->showInfo(); // "Я храню 11212" (вызовы self вернули 1, а $this - 2) 
+			echo "<br>Переопределённый метод возвращает ".ChildClass2::showStatOpt(); // 2
+
+		### ОБРАЩЕНИЕ К РОДИТЕЛЬСКИМ СВОЙСТВАМ И МЕТОДАМ ИЗ МЕТОДА ДОЧЕРНЕГО КЛАССА ###
+			class ChildClass3 extends ParentClass1 {
+				public const CON = 3;
+				protected static $statOpt  = 3;
+				public $opt = 3;
+				protected static function showStatOpt() {return self::$statOpt;}
+				public function showInfo() { // Слово parent вместо self даёт доступ к родителю:
+					echo "<br>Я храню ".self::CON.   self::$statOpt.   self::showStatOpt(). // 333
+					  ", а родитель ".parent::CON. parent::$statOpt. parent::showStatOpt(); // 111
+				}
+				// Если нужно обратиться не только к своему, но и к родительскому методу:
+				public function showFullInfo() { 
+					echo "<br>Вызов своего метода:"; $this->showInfo();
+					echo "<br>Вызов родительского метода:";    parent::showInfo();
+				} // Если в родительском классе метода нет, то он унаследуется от ближайшего предка
+			}
+			$child3 = new ChildClass3(); 
+			$child3->showFullInfo(); // Свой метод: 333111. Родительский метод: 11313
+	?>
+  </div>
+  <div>    <h3> ШАБЛОНЫ ПРИМЕНЕНИЯ МЕТОДОВ </h3>
+	<?php	
+		### Статические методы и свойства ###
+        class PixelStat { // Класс пикселей, который считает сколько пикселей создал
+			protected static $counter = 0;
+			function __construct() { self::$counter++; } // Увеличиваем счётчик при создании пикселя
+			function __destruct()  { self::$counter--; } // Уменьшаем при уничтожении
+            public static function showCount(){  // Статический метод для вывода на экран статистики
+				echo "<br>Создано " . self::$counter . " пикселей.";
+		}}
+        for ($i=1; $i<99; $i++) { $pix[$i] = new PixelStat(); } // Создадим пачку пикселей
+        PixelStat::showCount();      // Вывод на экран их количества (99)
+		$pix[5] = null; // Удаление пикселя
+		PixelStat::showCount(); // 98
+ 			
+	?>
+  </div>
 
 </div>
 
