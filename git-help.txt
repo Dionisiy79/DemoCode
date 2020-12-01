@@ -1,0 +1,40 @@
+# Вывести информацию о текущем состоянии:
+git status
+
+# Добавить файл в отслеживаемые
+git add JS/js-browser.js 
+
+# Добавить файлы по маске
+git add JS/*
+
+# Игорировать файлы (не отслеживать)
+git ignore C#/CS-begin/CS-begin/bin/*
+
+# Удалить ранее отследиваемый файл из репозитория
+git rm C#/CS-begin/CS-begin/bin
+
+# Зафикисировать изменения в указаном файле с указанным комментарием
+git commit JS/js-browser.js -m "Text of commentary"
+
+# Зафикисировать изменения во всех отслеживаемых файлах с указанным комментарием
+git commit  -m "Text of commentary"
+
+# Отправить текущее состояние локального репозитория на удалённый сервер
+git push origin master
+
+
+# Установить адрес удалённого репозитория
+git remote add origin https://github.com/dionisiy79/DemoCode.git
+git remote set-url origin https://github.com/Dionisiy79/DemoCode.git
+
+# Информация о истории коммиттов
+git log --graph --pretty=oneline --abbrev-commit --all --decorate
+
+# Получение изменений с сервера
+git fetch
+
+# Слияние изменений в локальную копию
+git merge
+
+# fetch + merge 
+git pull
