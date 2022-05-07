@@ -2,19 +2,21 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="10"/>
+    <Version Value="12"/>
     <BuildModes Active="Default"/>
     <Units Count="1">
       <Unit0>
         <Filename Value="pascal_begin.lpr"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="DemoProject"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="4" Y="80"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="22"/>
+        <CursorPos Y="222"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit0>
     </Units>
-    <JumpHistory Count="2" HistoryIndex="1">
+    <JumpHistory Count="3" HistoryIndex="2">
       <Position1>
         <Filename Value="pascal_begin.lpr"/>
         <Caret Line="231" TopLine="77"/>
@@ -23,6 +25,14 @@
         <Filename Value="pascal_begin.lpr"/>
         <Caret Line="80" Column="14" TopLine="64"/>
       </Position2>
+      <Position3>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="213" Column="105" TopLine="198"/>
+      </Position3>
     </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode="default"/>
+    </RunParams>
   </ProjectSession>
 </CONFIG>
