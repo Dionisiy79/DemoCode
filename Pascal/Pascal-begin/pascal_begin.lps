@@ -10,12 +10,14 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="DemoProject"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos Y="10"/>
+        <TopLine Value="17"/>
+        <CursorPos Y="89"/>
+        <FoldState Value=" T0jW0d11231b"/>
         <UsageCount Value="288"/>
         <Loaded Value="True"/>
       </Unit0>
     </Units>
-    <JumpHistory Count="26" HistoryIndex="25">
+    <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
         <Filename Value="pascal_begin.lpr"/>
         <Caret Line="18" Column="35" TopLine="8"/>
@@ -119,6 +121,14 @@
         <Filename Value="pascal_begin.lpr"/>
         <Caret Line="73" Column="5" TopLine="64"/>
       </Position26>
+      <Position27>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="11" Column="34"/>
+      </Position27>
+      <Position28>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="16" Column="24" TopLine="2"/>
+      </Position28>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
