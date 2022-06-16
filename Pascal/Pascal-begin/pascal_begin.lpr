@@ -133,21 +133,22 @@ begin { КОММАНДЫ ВЗАИМОДЕЙСТВИЯ С ПОЛЬЗОВАТЕЛ�
 
 
   // Настройка windows-консоли для отображения UTF8-строк
-  writeln('Console output codepage: ', GetConsoleOutputCP());   // 866 (windows)
-  Writeln('Console input codepage: ', GetTextCodePage(Input));  // 866 (windows)
-  Writeln('Console text codepage: ', GetTextCodePage(Output));  // 866 (windows)
-  Writeln('System codepage: ', DefaultSystemCodePage);          // 1251 (windows)
-  writeln(GetConsoleOutputCP(),' / ',GetConsoleCP());
+  {$ifndef UTF8mode}
+    {$ifdef windows} // Исходные параметры кодировок:
+      writeln('Console output codepage: ', GetConsoleOutputCP());           // 866
+      writeln('Console output stream codepage: ', GetTextCodePage(Output)); // 866
+      writeln('System codepage: ', DefaultSystemCodePage);                  // 1251
+      writeln('Console input codepage: ', GetConsoleCP());                  // 866
+      writeln('Console input stream codepage: ', GetTextCodePage(Input));   // 866
 
-  {$ifndef UTF8mode} {$ifdef windows}
-    SetConsoleOutputCP(CP_UTF8); // Смена кодировки консоли
-    writeln('Console output codepage: ', GetConsoleOutputCP());  // Стало 65001 вместо 866
-    SetTextCodePage(Output,CP_UTF8); // Смена кодировки потока вывода в консоль
-    Writeln('Console text codepage: ', GetTextCodePage(Output)); // Стало 65001 вместо 866
-    SetMultiByteConversionCodePage(CP_UTF8); // Смена системной кодировки
-    Writeln('System codepage: ', DefaultSystemCodePage);  // Стало 65001 вместо 1251
-
-  {$endif} {$endif}
+      SetConsoleOutputCP(CP_UTF8); // Смена кодировки отображения консоли
+      writeln('Console output codepage: ', GetConsoleOutputCP());  // Стало 65001 вместо 866
+      SetTextCodePage(Output,CP_UTF8); // Смена кодировки потока вывода в консоль
+      writeln('Console output stream codepage: ',GetTextCodePage(Output)); // Стало 65001 вместо 866
+      SetMultiByteConversionCodePage(CP_UTF8); // Смена системной кодировки
+      writeln('System codepage: ', DefaultSystemCodePage);  // Стало 65001 вместо 1251
+    {$endif}
+  {$endif} // После этих трёх изменений UTF8-строки будут нормально отображаться и вводиться
 
   // Вывод текстовых строк
   write('Hello world!');   // Вывод строки в консоль без перевода строки
