@@ -1,5 +1,5 @@
 // https://wiki.freepascal.org/Lazarus_with_FPC3.0_without_UTF-8_mode#Problem_System_encoding_and_Console_encoding_.28Windows.29
-
+// https://stackoverflow.com/questions/24762413/how-to-set-console-font
 unit SetWinConsoleFont;
 
 interface
