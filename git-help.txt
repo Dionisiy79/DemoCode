@@ -23,9 +23,17 @@ git commit  -m "Text of commentary"
 git push origin master
 
 
+# Создать пустой репозиторий 
+git init
+
 # Установить адрес удалённого репозитория
 git remote add origin https://github.com/dionisiy79/DemoCode.git
 git remote set-url origin https://github.com/Dionisiy79/DemoCode.git
+
+# Как авторизироваться по токену описано в статье https://zalinux.ru/?p=6774
+
+# Клонировать репозиторий (например на комп второго разработчика)
+git clone https://github.com/dionisiy79/DemoCode.git
 
 # Информация о истории коммиттов
 git log --graph --pretty=oneline --abbrev-commit --all --decorate
