@@ -344,6 +344,8 @@ begin { ПРИВЕДЕНИЕ ПРОСТЫХ ТИПОВ ПРИ ОПЕРАЦИЯХ
     str(3.456789,str1);
     writeln(str1);
 
+    PCharstr1 := PChar(rawstr1); // Явное приведение строки к строке другого типа
+
     // Преобразование в строку с форматированием
     ThousandSeparator := ' '; // Устаревшие способы изменить разделитель тысячных частей числа
     DecimalSeparator := ',';  // и дробной части числа
@@ -548,9 +550,9 @@ end;
 
 begin { РАБОТА С ФАЙЛАМИ }
 
-  begin {ЗАПИСЬ И ЧТЕНИЕ ДАННЫХ В ФАЙЛ }
+  begin {ЗАПИСЬ И ЧТЕНИЕ ДАННЫХ ИЗ ФАЙЛА }
     // Запись в тектосвый файл, представляющий собой последовательность строк:
-      Assign(textfile1, 'тест.txt');           // Связать переменную с именем файла
+      AssignFile(textfile1, 'тест.txt');           // Связать переменную с именем файла
       ReWrite(textfile1);                      // Открыть файл для записи, затерев всё содержимое
       WriteLn(textfile1, 'Строка1', 3.14:8:2); // Записать в файл строку и число
       Write(textfile1, 'Строка2');             // Записать строку без перевода каретки
@@ -559,13 +561,13 @@ begin { РАБОТА С ФАЙЛАМИ }
       Close(textfile1); // Закрыть файл, сохранив из буфера все изменения
 
     // Запись в бинарный файл, представляющий собой последовательность типа char
-      Assign(binfile1, 'тест2Ψ.txt'); ReWrite(binfile1);
+      AssignFile(binfile1, 'тест2Ψ.txt'); ReWrite(binfile1);
       Write(binfile1, 'a','b','c',chr(89));       // Запись нескольких разных символов
      for i:=1 to 255 do Write(binfile1, chr(i)); // Запись всего набора ANSI-символов
      Close(binfile1);
 
    // Запись в типизированный файл
-     Assign(typfile1, 'тест3.txt'); ReWrite(typfile1);
+     AssignFile(typfile1, 'тест3.txt'); ReWrite(typfile1);
      for i:=1 to 100 do Write(typfile1, i/3);  // Запись сотни чисел типа real
      Close(typfile1);
 
@@ -641,7 +643,7 @@ begin { РАБОТА С ФАЙЛАМИ }
      // Функция Erase() выдаёт ошибку, если файла не существует, поэтому лучше делать проверку:
        if FileExists('тест4Ψ.txt') then
          begin
-           assign(binfile1, 'тест4Ψ.txt');
+           AssignFile(binfile1, 'тест4Ψ.txt');
            Erase(binfile1);
          end;
 
@@ -674,12 +676,23 @@ begin { РАБОТА С ФАЙЛАМИ }
    {$endif}
 
    // Удаление демонстрационных файлов
-     if FileExists('тест5Ψ.txt') then begin assign(binfile1, 'тест5Ψ.txt'); Erase(binfile1); end;
-     if FileExists('копия Ψ.txt') then begin assign(binfile1, 'копия Ψ.txt'); Erase(binfile1); end;
-     if FileExists('тест.txt') then begin assign(binfile1, 'тест.txt'); Erase(binfile1); end;
+     if FileExists('тест5Ψ.txt') then begin AssignFile(binfile1, 'тест5Ψ.txt'); Erase(binfile1); end;
+     if FileExists('копия Ψ.txt') then begin AssignFile(binfile1, 'копия Ψ.txt'); Erase(binfile1); end;
+     if FileExists('тест.txt') then begin AssignFile(binfile1, 'тест.txt'); Erase(binfile1); end;
+
+  { МАНИПУЛЯЦИИ С КАТАЛОГАМИ И ДИСКАМИ }
+    MkDir('Каталог 1');
+    if DirectoryExists('Каталог 1') then writeln('Каталог найден!');
+    str1 := GetCurrentDir(); // Полный путь к текущему каталогу
+       writeln('Текущий каталог: ', str1);
+    ChDir('Каталог 1'); // Смена каталога
+    ChDir('..');        // Возврат на уровень выше
+    RenameFile('Каталог 1', 'Каталог 2'); // Переименование каталога
+    RmDir('Каталог 2'); // Удаление каталога
+    numb_8b:=DiskSize(0); writeln('Всего на диске: ', numb_8b, ' байт');
+    numb_8b:=DiskFree(0); writeln('Свободно на диске: ', numb_8b, ' байт');
 
   end;
-
 end;
 
 begin{ ИНИЦИАЛИЗАЦИЯ И ИСПОЛЬЗОВАНИЕ СОСТАВНЫХ НАБОРОВ ДАННЫХ }
