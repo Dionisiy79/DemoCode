@@ -32,12 +32,17 @@
         <PackageName Value="LazUtils"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="1">
+    <Units Count="2">
       <Unit0>
         <Filename Value="pascal_begin.lpr"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="DemoProject"/>
+        <UnitName Value="Pascal_Begin"/>
       </Unit0>
+      <Unit1>
+        <Filename Value="pascal_begin_functions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Pascal_Begin_Functions"/>
+      </Unit1>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
