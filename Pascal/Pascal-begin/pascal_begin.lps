@@ -10,9 +10,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="Pascal_Begin"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="731"/>
-        <CursorPos X="20" Y="743"/>
-        <FoldState Value=" T0l90h0229 p0uP0j031+"/>
+        <TopLine Value="347"/>
+        <CursorPos X="33" Y="362"/>
+        <FoldState Value=" T0lB0h0226 p0uN0P1115"/>
         <UsageCount Value="288"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -21,132 +21,132 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="Pascal_Begin_Functions"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="21"/>
-        <CursorPos X="15" Y="55"/>
+        <TopLine Value="64"/>
+        <CursorPos X="59" Y="72"/>
         <UsageCount Value="205"/>
         <Loaded Value="True"/>
       </Unit1>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="699" Column="20" TopLine="624"/>
+        <Filename Value="pascal_begin_functions.pas"/>
+        <Caret Line="59" Column="2" TopLine="50"/>
       </Position1>
       <Position2>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="701" Column="52" TopLine="624"/>
+        <Caret Line="353" TopLine="338"/>
       </Position2>
       <Position3>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Column="20"/>
+        <Caret Line="12" Column="6"/>
       </Position3>
       <Position4>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="161" TopLine="145"/>
+        <Caret Line="81" Column="8" TopLine="59"/>
       </Position4>
       <Position5>
         <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="34" TopLine="10"/>
+        <Caret Line="55" Column="17" TopLine="50"/>
       </Position5>
       <Position6>
         <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="17" TopLine="6"/>
+        <Caret Line="59" Column="14" TopLine="48"/>
       </Position6>
       <Position7>
-        <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="20" TopLine="10"/>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="744" Column="12" TopLine="729"/>
       </Position7>
       <Position8>
         <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="35" Column="17" TopLine="9"/>
+        <Caret Line="66" Column="40" TopLine="52"/>
       </Position8>
       <Position9>
         <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="22" Column="18" TopLine="9"/>
+        <Caret Line="70" TopLine="59"/>
       </Position9>
       <Position10>
-        <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="21" TopLine="8"/>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="744" Column="16" TopLine="729"/>
       </Position10>
       <Position11>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="451" TopLine="154"/>
+        <Caret Line="747" Column="49" TopLine="738"/>
       </Position11>
       <Position12>
-        <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="159" Column="4" TopLine="150"/>
+        <Filename Value="pascal_begin_functions.pas"/>
+        <Caret Line="29" Column="115" TopLine="17"/>
       </Position12>
       <Position13>
         <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="20" Column="7" TopLine="7"/>
+        <Caret Line="89" Column="42" TopLine="77"/>
       </Position13>
       <Position14>
         <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="43" TopLine="25"/>
+        <Caret Line="91" Column="17" TopLine="78"/>
       </Position14>
       <Position15>
         <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="38" Column="15" TopLine="16"/>
+        <Caret Line="16" Column="21"/>
       </Position15>
       <Position16>
         <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="55" Column="13" TopLine="35"/>
+        <Caret Line="94" Column="86" TopLine="81"/>
       </Position16>
       <Position17>
-        <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="736" Column="8" TopLine="724"/>
+        <Filename Value="pascal_begin_functions.pas"/>
+        <Caret Line="93" Column="126" TopLine="81"/>
       </Position17>
       <Position18>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="101" Column="3" TopLine="84"/>
+        <Caret Line="882" Column="2" TopLine="859"/>
       </Position18>
       <Position19>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="13" Column="24"/>
+        <Caret Line="290" Column="10" TopLine="275"/>
       </Position19>
       <Position20>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="741" Column="9" TopLine="722"/>
+        <Caret Line="289" Column="51" TopLine="276"/>
       </Position20>
       <Position21>
-        <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="24" Column="24" TopLine="10"/>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="358" Column="5" TopLine="345"/>
       </Position21>
       <Position22>
-        <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="63" Column="38" TopLine="49"/>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="286" Column="9" TopLine="515"/>
       </Position22>
       <Position23>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="740" Column="16" TopLine="428"/>
+        <Caret Line="289" Column="61" TopLine="276"/>
       </Position23>
       <Position24>
-        <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="59" Column="2" TopLine="50"/>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="59" Column="99" TopLine="61"/>
       </Position24>
       <Position25>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="353" TopLine="338"/>
+        <Caret Line="415" Column="43" TopLine="392"/>
       </Position25>
       <Position26>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="12" Column="6"/>
+        <Caret Line="67" TopLine="49"/>
       </Position26>
       <Position27>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="81" Column="8" TopLine="59"/>
+        <Caret Line="388" Column="17" TopLine="371"/>
       </Position27>
       <Position28>
-        <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="55" Column="17" TopLine="50"/>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="383" Column="24" TopLine="372"/>
       </Position28>
       <Position29>
-        <Filename Value="pascal_begin_functions.pas"/>
-        <Caret Line="59" Column="14" TopLine="48"/>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="357" Column="49" TopLine="340"/>
       </Position29>
       <Position30>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="744" Column="12" TopLine="729"/>
+        <Caret Line="359" Column="27" TopLine="346"/>
       </Position30>
     </JumpHistory>
     <RunParams>
