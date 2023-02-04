@@ -398,6 +398,7 @@ begin { ОПЕРАЦИИ }
              isNaN(NaN)           and // Функция isNaN(x) возвращает true если её аргумент NaN
              isInfinite(Infinity) and // isInfinite(x) возращает true если её аргумент бесконечность
              (NaN <> NaN)         and // NaN не равен ничему - даже самому себе
+         not (NaN = NaN)          and
              isNaN(0 / 0)         and // Не вычислимо: деление 0 на 0,
              isNaN(0 * Infinity)  and // умножение нуля на бесконечность,
              isNaN(5 + NaN)       and // арифметические операции с NaN,
