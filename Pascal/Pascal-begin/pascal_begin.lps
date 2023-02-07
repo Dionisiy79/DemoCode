@@ -10,9 +10,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="Pascal_Begin"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="485"/>
-        <CursorPos X="57" Y="507"/>
-        <FoldState Value=" T0lf0h212 pkIrL0{;0211]331A"/>
+        <TopLine Value="500"/>
+        <CursorPos X="17" Y="513"/>
+        <FoldState Value=" T0lU0C01222 pkIrZ0{;0211]331K"/>
         <UsageCount Value="288"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -27,7 +27,7 @@
         <Loaded Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="pascal_begin.lpr"/>
         <Caret Line="78" Column="53"/>
@@ -144,6 +144,10 @@
         <Filename Value="pascal_begin.lpr"/>
         <Caret Line="504" Column="53" TopLine="486"/>
       </Position29>
+      <Position30>
+        <Filename Value="pascal_begin.lpr"/>
+        <Caret Line="513" Column="18" TopLine="494"/>
+      </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
