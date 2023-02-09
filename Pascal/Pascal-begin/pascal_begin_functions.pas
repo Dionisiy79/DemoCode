@@ -25,7 +25,9 @@ interface { В разделе interface объявляются публичны�
   procedure proc2;
   procedure proc3;
   procedure proc4(width,height:integer;flag:boolean);
-  procedure proc5(width:integer; height:integer=100);
+  procedure proc4b(width:integer; height:integer=100);
+  procedure proc5(a: array of byte);
+  procedure proc5b(a: array of const);
   procedure double(var number:integer);
   procedure proc6(var a:integer; const b:integer; constref c:integer);
   procedure proc7(var a);
@@ -79,10 +81,40 @@ implementation { В разделе implementation описываются тел�
   end;
 
   // Необязательные именованные аргументы:
-  procedure proc5(width:integer; height:integer=100); // Можно задать значения по умолчанию
-  begin // Если у последних аргументов указаны значения по умолчанию, то их не обязательно указывать
-    writeln('Ширина: ',width,'. Высота: ',height); // при вызове процедуры
+  procedure proc4b(width:integer; height:integer=100); // Можно задать значения по умолчанию
+  begin // Если у последних аргументов указаны значения по умолчанию, то их
+    writeln('Ширина: ',width,'. Высота: ',height); // не обязательно указывать при вызове процедуры
   end;
+
+  // Неименованные аргументы можно передавать с помощью "открытого" массива (т.е. неопред. длины)
+  procedure proc5(a: array of byte);
+  var i:integer;
+  begin
+    for i:=0 to high(a) do writeln('Аргумент №', i,' = ', a[i]);
+  end;
+
+  // Через специальный массив констант можно передать разнотипные неименованные аргументы
+  // Каждый элемента такого массива имеет тип TVarRec - запись с вариантами
+  procedure proc5b(a: array of const);
+  var i:integer;
+  begin
+    write('Получены аргументы: ');
+    for i:=0 to high(a) do
+      case a[i].VType of  // Доступ к аргументам, как к вариантам записи
+        vtInteger    : write(           a[i].VInteger         ,', ');
+        vtBoolean    : write(           a[i].VBoolean         ,', ');
+        vtchar       : write(           a[i].VChar            ,', ');
+        vtextended   : write(           a[i].VExtended^       ,', ');
+        vtString     : write(           a[i].VString^         ,', ');
+        vtPointer    : write(   Longint(a[i].VPointer)        ,', ');
+        vtPChar      : write(           a[i].VPChar           ,', ');
+        vtObject     : write(           a[i].VObject.Classname,', ');
+        vtClass      : write(           a[i].VClass.Classname ,', ');
+        vtAnsiString : write(AnsiString(a[i].VAnsiString)     ,', ');
+      else write ('(Аргумент неизвестного типа) : ',a[i].vtype);
+      end; writeln;
+  end;
+
 
   // Передача в качестве аргумента не значения, а ссылки на значение переменной:
   procedure double(var number:integer); // Ключевое слово var перед именем аргумента определяет,
