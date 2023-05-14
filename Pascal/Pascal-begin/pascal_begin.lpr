@@ -868,6 +868,12 @@ begin { ФУНКЦИОНАЛЬНОЕ ПРОГРАММИРОВАНИЕ }
   writeln('Cумма чисел 2,3 и 4 равна: ', i);
   i := ApplyFunc1(@sum,2,3,4); // Можно обойтись и без переменной - передать сразу адрес функции
 
+  writeln('Результаты созданных функций: ');
+  func_pointer1 := ReturnFunc1(8);
+  writeln(func_pointer1(3,4),' и ');
+  func_pointer1 := ReturnFunc1(9);
+  writeln(func_pointer1(3,4));
+
   localProc1;   // При вызове localProc1 ссылка на вложенную подпрограмму сохраняется в переменную
   procPointer2; // Вызов вложенной подпрограммы через процедурную переменную с типом nested
 
@@ -962,7 +968,11 @@ begin { РЕКУРСИЯ }
     if (prime(i)) then str1 += ' ' + intToStr(i) + ' ';
   writeln('Простые числа: ', str1);
 
-  countdown(1000000);
+  writeln('Суммы округлённых квадратных корней чисел -
+  writeln('от 1 до 1000: ', sumSqrt(1000));
+  // Псевдорекурсия не переполняет стек при больших значениях:
+  writeln('от 1 до 1000000: ', trampoline(@sumSqrtTail, 1000000));
+
 end;
 
 begin { ЦИКЛЫ }
