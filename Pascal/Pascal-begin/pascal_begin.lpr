@@ -162,21 +162,22 @@ var // Объявление имён изменяемых переменных. 
 
     // Ссылку на переменную указанного типа можно объявить, написав перед именем типа символ ^
     int_pointer1: ^integer; // Переменная int_pointer1 может хранить ссылку на integer-переменную
+    pointer1 : pointer; // Универсальная ссылка, которая моет ссылаться на переменную любого типа.
 
-    // Для простых типов данных существуют стандартные ссылочные типы:
+    // Для скалярных (простых) типов данных существуют стандартные ссылочные типы:
     int_pointer2    : PInteger;  // Синоним ^Integer
 
-    { Также из коробки доступны:
+    { Также из коробки доступны такие ссылки на переменные скалярных типов:
         PShortint    PByte     PSingle      PCurrency    PBoolean      PString        PUnicodeString
         PSmallint    PWord     PDouble      PChar        PByteBool     PAnsiString    PRawByteString
         PLongint     PDWord    PExtended    PWideChar    PWordBool     PUTF8String    PShortString
         PInt64       PQWord    PFloat       PVariant     PQWordBool    PWideString
-      При этом нет встроенных типов PReal и PValReal
+      При этом списке нет PReal и PValReal.
     }
 
     // Можно создавать ссылки на ссылку, как указатель на уже существующий ссылочный тип:
     int_doublepointer1    : ^PInteger;
-    { Для некоторых типов есть такие встроенные типы ссылки на ссылку:
+    { Для некоторых типов уже есть такие встроенные типы ссылки на ссылку:
           PPLongint     PPByte     PPDouble      PPChar       PPWideChar
     }
 
