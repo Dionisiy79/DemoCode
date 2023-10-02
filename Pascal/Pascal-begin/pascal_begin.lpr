@@ -160,10 +160,10 @@ var // Объявление имён изменяемых переменных. 
     int_pointer1: ^integer; // Переменная int_pointer1 может хранить ссылку на integer-переменную
     pointer1 : pointer; // Безтиповый указатель - может ссылаться на переменную любого типа.
 
-    // Для многих скалярных (простых) типов существуют соответсвующие типизировннаые указатели:
+    // Для многих скалярных (простых) типов существуют соответсвующие типизированные указатели:
     int_pointer2    : PInteger;  // Синоним ^Integer
 
-    { Также из коробки доступны такие типизированный указатели для таких скалярных типов:
+    { Также "из коробки" доступны такие типизированный указатели для таких скалярных типов:
         PShortint    PByte     PSingle      PCurrency    PBoolean      PString        PUnicodeString
         PSmallint    PWord     PDouble      PChar        PByteBool     PAnsiString    PRawByteString
         PLongint     PDWord    PExtended    PWideChar    PWordBool     PUTF8String    PShortString
