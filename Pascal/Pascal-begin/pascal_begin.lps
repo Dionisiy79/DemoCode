@@ -10,14 +10,14 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="Pascal_Begin"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="633"/>
-        <CursorPos X="26" Y="648"/>
-        <FoldState Value=" T0me0h2 pl3m90%12111133 p0tF0G1L"/>
+        <TopLine Value="732"/>
+        <CursorPos Y="1240"/>
+        <FoldState Value=" T0me0h2 pl3m90%21111133 p0tK0$053-"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <WindowIndex Value="1"/>
-          <TopLine Value="133"/>
-          <CursorPos X="7" Y="141"/>
+          <TopLine Value="163"/>
+          <CursorPos X="7" Y="140"/>
         </ExtraEditor1>
         <UsageCount Value="288"/>
         <Loaded Value="True"/>
@@ -27,7 +27,7 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="Pascal_Begin_Functions"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="122"/>
+        <TopLine Value="329"/>
         <CursorPos X="32" Y="164"/>
         <UsageCount Value="205"/>
         <Loaded Value="True"/>
