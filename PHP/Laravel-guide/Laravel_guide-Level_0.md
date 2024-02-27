@@ -42,7 +42,7 @@
 
 #### 1. Вывод простого текста
 
->>⇩⇩⇩ `.\routes\web.php` ⇩⇩⇩
+>⇩⇩⇩ `.\routes\web.php` ⇩⇩⇩
 
 ```php
 	Route::get('/hello', function () {
