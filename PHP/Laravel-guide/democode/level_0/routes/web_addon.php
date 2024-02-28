@@ -1,9 +1,9 @@
 <?php
 
 /* Этот демонстрационный код нужно добавить в конец файла `.\routes\web.php`
-   Для этого либо скопируйте его туда вручную, либо добавьте в него строку кода:
+   Для этого либо скопируйте его туда целиком, либо добавьте в него строку кода:
    
-   require  base_path() . "/democode/level_0/routes-web_addon.php";
+   require  base_path() . "/democode/level_0/routes/web_addon.php";
 */
 
 #####################################
@@ -57,19 +57,20 @@
 
 ### 4. Вызов одного из контроллеров с последующим ответом от него ###
 
-    /* Колбэк-функцию можно и лучше делать не анонимной, а в виде метода объекта-контроллера. Поскольку мы пока не создали своих новых контроллеров, то новые методы можно прописать в единственном имеющемся контроллере (он находится в файле `.\app\Http\Controllers\Controller.php`). */
+    /* Колбэк-функцию можно и лучше делать не анонимной, а в виде метода объекта-контроллера. Для этого создатим в виде класса новый пустой контроллер с именем `SimpleController` в файле `app\Http\Controllers\SimpleController.php` и пропишем в нём все нужные методы. После того как контроллер подготовлен, можно в маршрутах вызывать методы этого контроллера. Вызов callback-методов, находящихся внутри класса, делается указанием массива из двух строк (полного пути к классу и имени метода): */
 
-    Route::get('/ctrl-hello', ['App\Http\Controllers\Controller', 'showText']);
+    Route::get('/ctrl-hello', 
+               ['App\Http\Controllers\SimpleController', 'showText']);
 
     /* Если подключить контроллер директивой `use`, то можно не писать 
        полный путь к нему, а через краткое имя обратиться к встроенной 
        константе `class`, хранящей полное имя класса: */
-    use App\Http\Controllers\Controller;
-    Route::get('/ctrl-hello2', [Controller::class, 'showText']);
+    use App\Http\Controllers\SimpleController;
+    Route::get('/ctrl-hello2', [SimpleController::class, 'showText']);
 
 ### 5. Вызов контроллера с дальнейшим показом blade-шаблона ###
 
-    Route::get('/ctrl-welcome', [Controller::class, 'showWelcome']);
+    Route::get('/ctrl-welcome', [SimpleController::class, 'showWelcome']);
 
 ### 6. Переадресация ###
     
@@ -95,7 +96,7 @@
        маршрут указывается последним, т.к. он срабатывает безусловно: */
    
     if (0) {  // Отключим его работу, чтобы добавляемые ниже маршруты работали
-        Route::fallback([Controller::class, 'showWelcome']);
+        Route::fallback([SimpleController::class, 'showWelcome']);
     }
 
 #--------------------------#
