@@ -228,11 +228,12 @@ class SimpleController extends Controller
 
 >⇩⇩⇩ `resources\views\landing1.blade.php` ⇩⇩⇩
 
-```html
+```xhtml
 	<div>
     	<p> Приветсвуем Вас на странице Landing1 !!! </p>
 	</div>
 ```
+
 Теперь этот файл шаблона можно загружать колбэками `view()`. Для этого создадим в файле маршрутов ещё один маршрут:
 
 >⇩⇩⇩ `.\routes\web.php` ⇩⇩⇩
