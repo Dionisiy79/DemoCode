@@ -32,5 +32,10 @@ class SimpleController extends Controller
     // Возврат шаблона `resources\views\landing1.blade.php`:
     public function showLanding1() { 
         return view('landing1'); 
-    }     
+    } 
+    
+    // Статический метод для его демонстрационного вызова в шаблонах:
+    public static function showText2() {
+        return 'Привет от статического метода контроллера!'; 
+    }
 }
