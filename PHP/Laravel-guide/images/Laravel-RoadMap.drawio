@@ -1,20 +1,20 @@
-<mxfile host="Electron" modified="2024-02-29T19:11:58.984Z" agent="Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="dzfXekMLWyT2WNzP7KTD" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2024-03-03T19:10:05.427Z" agent="Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="6GRhKsu608lJyXDb5j1h" version="21.1.2" type="device">
   <diagram name="Страница 1" id="1nTtm0_BMDjhct5yccOk">
-    <mxGraphModel dx="1120" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1465" dy="1006" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-30" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;" parent="1" vertex="1">
-          <mxGeometry x="310" y="280" width="580" height="220" as="geometry" />
+          <mxGeometry x="124" y="410" width="580" height="220" as="geometry" />
         </mxCell>
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-25" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;" parent="1" vertex="1">
-          <mxGeometry x="310" y="30" width="580" height="220" as="geometry" />
+          <mxGeometry x="124" y="80" width="580" height="270" as="geometry" />
         </mxCell>
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2ZtT-Da5C00QiOGOJkK9-1" target="2ZtT-Da5C00QiOGOJkK9-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="585" y="90" />
-              <mxPoint x="585" y="90" />
+              <mxPoint x="399" y="140" />
+              <mxPoint x="399" y="140" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -22,13 +22,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-1" value="Создание Laravel-проекта" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="495" y="48" width="180" height="30" as="geometry" />
+          <mxGeometry x="309" y="98" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="2ZtT-Da5C00QiOGOJkK9-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.547;exitY=1.03;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="2ZtT-Da5C00QiOGOJkK9-2" target="2ZtT-Da5C00QiOGOJkK9-4" edge="1">
+        <mxCell id="2ZtT-Da5C00QiOGOJkK9-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="2ZtT-Da5C00QiOGOJkK9-2" target="2ZtT-Da5C00QiOGOJkK9-4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="592" y="140" />
-              <mxPoint x="593" y="140" />
+              <mxPoint x="436" y="190" />
+              <mxPoint x="595" y="190" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -38,46 +38,69 @@
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-36" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" parent="1" source="2ZtT-Da5C00QiOGOJkK9-2" target="2ZtT-Da5C00QiOGOJkK9-35" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="548" y="230" />
-              <mxPoint x="687" y="230" />
+              <mxPoint x="361" y="380" />
+              <mxPoint x="540" y="380" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-2" value="Разновидности направлений маршрутов" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#b0e3e6;strokeColor=#0e8088;" parent="1" vertex="1">
-          <mxGeometry x="510" y="100" width="150" height="30" as="geometry" />
+          <mxGeometry x="324" y="150" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" parent="1" source="2ZtT-Da5C00QiOGOJkK9-2" target="2ZtT-Da5C00QiOGOJkK9-33" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="2ZtT-Da5C00QiOGOJkK9-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="2ZtT-Da5C00QiOGOJkK9-2" target="2ZtT-Da5C00QiOGOJkK9-37" edge="1">
+        <mxCell id="2ZtT-Da5C00QiOGOJkK9-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.637;exitY=0.987;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="2ZtT-Da5C00QiOGOJkK9-2" target="2ZtT-Da5C00QiOGOJkK9-37" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="190" />
+              <mxPoint x="420" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OjklDx6xXTm0ZTOKtwND-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2ZtT-Da5C00QiOGOJkK9-4" target="OjklDx6xXTm0ZTOKtwND-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="2ZtT-Da5C00QiOGOJkK9-4" value="Именованные маршруты" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#b0e3e6;strokeColor=#0e8088;" parent="1" vertex="1">
-          <mxGeometry x="563" y="170" width="120" height="32.5" as="geometry" />
+        <mxCell id="2ZtT-Da5C00QiOGOJkK9-4" value="Именованные маршруты" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#b0e3e6;strokeColor=#0e8088;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="535" y="213.13" width="120" height="32.5" as="geometry" />
         </mxCell>
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-19" value="Получение полного списка маршрутов" style="whiteSpace=wrap;html=1;rounded=1;fontSize=12;fillColor=#C9C9C9;strokeColor=#36393d;" parent="1" vertex="1">
-          <mxGeometry x="380" y="160" width="120" height="35" as="geometry" />
+          <mxGeometry x="194" y="210" width="120" height="35" as="geometry" />
         </mxCell>
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2ZtT-Da5C00QiOGOJkK9-21" target="2ZtT-Da5C00QiOGOJkK9-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-21" value="Создание контроллера" style="whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="690" y="100" width="120" height="30" as="geometry" />
+          <mxGeometry x="535" y="150" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="2ZtT-Da5C00QiOGOJkK9-29" value="&lt;b&gt;Уровень 0.&lt;/b&gt; &lt;br&gt;Создание &lt;br&gt;статических &lt;br&gt;страниц" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="320" y="30" width="110" height="100" as="geometry" />
+        <mxCell id="2ZtT-Da5C00QiOGOJkK9-29" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;Уровень 0.&lt;/b&gt; &lt;br style=&quot;font-size: 14px;&quot;&gt;Создание &lt;br style=&quot;font-size: 14px;&quot;&gt;статических &lt;br style=&quot;font-size: 14px;&quot;&gt;страниц" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="134" y="80" width="110" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="2ZtT-Da5C00QiOGOJkK9-31" value="&lt;b&gt;Уровень 1.&lt;/b&gt;&amp;nbsp;&lt;br&gt;Добавление &lt;br&gt;логики реа-&lt;br&gt;гирования &lt;br&gt;на веб-запросы" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="320" y="280" width="110" height="110" as="geometry" />
+        <mxCell id="2ZtT-Da5C00QiOGOJkK9-31" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;Уровень 1.&lt;/b&gt;&amp;nbsp;&lt;br style=&quot;font-size: 14px;&quot;&gt;Добавление &lt;br style=&quot;font-size: 14px;&quot;&gt;логики реа-&lt;br style=&quot;font-size: 14px;&quot;&gt;гирования &lt;br style=&quot;font-size: 14px;&quot;&gt;на веб-запросы" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="134" y="410" width="110" height="110" as="geometry" />
         </mxCell>
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-33" value="Параметризованные&amp;nbsp; маршруты" style="whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="481" y="300" width="132" height="40" as="geometry" />
+          <mxGeometry x="295" y="430" width="132" height="40" as="geometry" />
         </mxCell>
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-35" value="Фильтрация запросов по их HTTP-методу" style="whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="621" y="300" width="132" height="40" as="geometry" />
+          <mxGeometry x="474" y="430" width="132" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OjklDx6xXTm0ZTOKtwND-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2ZtT-Da5C00QiOGOJkK9-37" target="OjklDx6xXTm0ZTOKtwND-1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="2ZtT-Da5C00QiOGOJkK9-37" value="Создание шаблонов веб-страниц" style="whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="710" y="170" width="120" height="36.25" as="geometry" />
+          <mxGeometry x="390" y="211.25" width="120" height="36.25" as="geometry" />
+        </mxCell>
+        <mxCell id="OjklDx6xXTm0ZTOKtwND-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OjklDx6xXTm0ZTOKtwND-1" target="OjklDx6xXTm0ZTOKtwND-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OjklDx6xXTm0ZTOKtwND-1" value="Использование переменных и PHP-кода в шаблонах" style="whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="280" width="120" height="49.99" as="geometry" />
+        </mxCell>
+        <mxCell id="OjklDx6xXTm0ZTOKtwND-3" value="Включаемые подшаблоны" style="whiteSpace=wrap;html=1;fillColor=#97D077;rounded=1;strokeColor=#82b366;gradientColor=none;shadow=0;glass=0;" vertex="1" parent="1">
+          <mxGeometry x="535" y="289" width="120" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="OjklDx6xXTm0ZTOKtwND-6" value="Дорожная карта democode-гида по Laravel" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=21;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="160" y="30" width="510" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
