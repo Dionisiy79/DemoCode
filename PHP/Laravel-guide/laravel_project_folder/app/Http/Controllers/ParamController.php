@@ -7,5 +7,5 @@
    и заменить в нём всё содержимое на эту строку, подключающую демо-код: ↓ ↓ ↓
 */
 
-require  base_path() . "\democode\level_0" . 
+require  base_path() . "\democode\level_1" . 
     "\app\Http\Controllers\ParamController_Addon.php";
