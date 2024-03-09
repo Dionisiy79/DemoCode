@@ -28,6 +28,7 @@ return [
         resource_path('views'),  // Стандартный путь Laravel
         // Дополнительные пути к пользовательским шаблонам:
         base_path() . "/democode/level_0/resources/views",
+        base_path() . "/democode/level_1/resources/views",
     ],
 
     /*
