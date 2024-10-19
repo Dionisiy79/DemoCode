@@ -2193,6 +2193,7 @@ console.groupEnd("Дескрипторы свойств");
 console.groupEnd("Объектно-ориентированное программирование");
 }
 
+document.write("<pre>Скрипт js-begin.js успешно закончил работу!<\/pre>");
 
 
 
