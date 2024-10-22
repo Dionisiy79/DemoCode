@@ -220,6 +220,16 @@ https://learn.javascript.ru/function-expressions#function-expression-v-sravnenii
     console.groupEnd("Создание стрелочных функций");
   }   
 
+  {/* ОСОБЫЕ СВОЙСТВА СТРЕЛОЧНЫХ ФУНКЦИЙ 
+        https://learn.javascript.ru/arrow-functions
+    */
+    console.groupCollapsed("Особые свойства стрелочных функций");
+
+
+    
+    console.groupEnd("Особые свойства стрелочных функций");
+  }   
+
   console.groupEnd("Функциональное программирование"); 
 
 } 
