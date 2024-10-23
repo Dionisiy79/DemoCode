@@ -702,6 +702,7 @@ console.groupEnd("Приведение простых типов при опер
             
             https://jsflow.org/docs/scope-fundamentals/
             https://learn.javascript.ru/closures#vozvrat-funktsii
+            http://dmitrysoshnikov.com/ecmascript/ru-chapter-6-closures/
         */    
     
     // ЛОКАЛЬНЫЕ ПЕРЕМЕННЫЕ ФУНКЦИИ //
