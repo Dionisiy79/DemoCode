@@ -10,17 +10,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="Pascal_Begin"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="917"/>
-        <CursorPos X="6" Y="930"/>
+        <TopLine Value="406"/>
+        <CursorPos X="26" Y="412"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
-          <WindowIndex Value="1"/>
+          <EditorIndex Value="-1"/>
           <TopLine Value="1819"/>
           <CursorPos X="48" Y="1809"/>
-          <FoldState Value=" T0r30h2 pl3m90)2111113t"/>
         </ExtraEditor1>
         <ExtraEditor2>
-          <EditorIndex Value="2"/>
+          <EditorIndex Value="-1"/>
           <TopLine Value="372"/>
           <CursorPos X="57" Y="376"/>
         </ExtraEditor2>
@@ -36,7 +35,7 @@
         <Loaded Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="pascal_begin.lpr"/>
         <Caret Line="1839" TopLine="1830"/>
@@ -147,16 +146,12 @@
       </Position27>
       <Position28>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="492" Column="43" TopLine="501"/>
+        <Caret Line="710" Column="75" TopLine="674"/>
       </Position28>
       <Position29>
         <Filename Value="pascal_begin.lpr"/>
-        <Caret Line="710" Column="75" TopLine="674"/>
-      </Position29>
-      <Position30>
-        <Filename Value="pascal_begin.lpr"/>
         <Caret Line="925" Column="41" TopLine="889"/>
-      </Position30>
+      </Position29>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
