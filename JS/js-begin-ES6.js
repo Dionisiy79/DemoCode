@@ -214,7 +214,7 @@ https://learn.javascript.ru/function-expressions#function-expression-v-sravnenii
         let f3 = () => "Сработала компактная стрелочная функция.";
         console.log( f3() );
         
-    // Естесственно можно создавать и анонимные стрелочные функции, вызывая их на лету:
+    // Естественно можно создавать и анонимные стрелочные функции, вызывая их на лету:
     
         console.log(    (function() { return "Сработала анонимная обычная функция."; })()   );
         console.log(            (() => "Сработала анонимная стрелочная функция.")()         );
@@ -227,7 +227,6 @@ https://learn.javascript.ru/function-expressions#function-expression-v-sravnenii
         let sqr1 = function(x) { return x*x; };
         let sqr2 = x => x*x;                    
         console.log("Квадрат числа равен" + sqr2(5)); // 25
-    
     
     console.groupEnd("Создание стрелочных функций");
   }   
