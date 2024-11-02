@@ -15,7 +15,7 @@
 {/* ХРАНЕНИЕ И ОБРАБОТКА ДАННЫХ В ОПЕРАТИВНОЙ ПАМЯТИ. */
   console.groupCollapsed("Хранение и обработка данных в оперативной памяти");
 
-  {/* РАБОТА С ПЕРЕМЕННЫМИ LET И CONST   
+  {/* РАБОТА С ПЕРЕМЕННЫМИ LET И CONST
           https://learn.javascript.ru/variables
     */
   console.groupCollapsed("Переменные"); 
