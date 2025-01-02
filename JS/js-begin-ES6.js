@@ -13,11 +13,11 @@
   
                  
 {/* ХРАНЕНИЕ И ОБРАБОТКА ДАННЫХ В ОПЕРАТИВНОЙ ПАМЯТИ. */
-  console.groupCollapsed("Хранение и обработка данных в оперативной памяти");
 
   {/* РАБОТА С ПЕРЕМЕННЫМИ LET И CONST
           https://learn.javascript.ru/variables
     */
+  console.groupCollapsed("Хранение и обработка данных в оперативной памяти");  
   console.groupCollapsed("Переменные"); 
 
     // НОВЫЕ ПРАВИЛА ОБЪЯВЛЕНИЯ И ИСПОЛЬЗОВАНИЯ ПЕРЕМЕННЫХ //
@@ -155,16 +155,15 @@
       
   console.groupEnd("Строки в обратных кавычках (шаблонные литералы)");
   }  console.groupEnd("Хранение и обработка данных в оперативной памяти");
-
 }
 
-{/* ФУНКЦИОНАЛЬНОЕ ПРОГРАММИРОВАНИЕ */
-  console.groupCollapsed("Функциональное программирование");
+{/* ПРОЦЕДУРНОЕ ПРОГРАММИРОВАНИЕ */
 
   {/* БЛОЧНАЯ ВИДИМОСТЬ ФУНКЦИЙ 
 https://learn.javascript.ru/function-expressions#function-expression-v-sravnenii-s-function-declaration
     */
-    console.groupCollapsed("Блочная видимость функций");
+  console.groupCollapsed("Процедурное программирование");
+  console.groupCollapsed("Блочная видимость функций");
     
     /* В ES6 отменено ограничение strict-режима на декларирование функций внутри блока.
        При этом видимость имени функции такая же, как и у let-переменных - т.е. за пределами блока
@@ -192,7 +191,48 @@ https://learn.javascript.ru/function-expressions#function-expression-v-sravnenii
       
     console.groupEnd("Блочная видимость функций");
   } 
-  
+
+  {/* ПАРАМЕТРЫ ПО УМОЛЧАНИЮ 
+      https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Default_parameters
+    */
+    console.groupCollapsed("Параметры по умолчанию");
+    
+    /* В ES6 значения параметров по умолчанию можно задавать прямо в заголовке функции.
+      Значение будет подставляться в парметр, если в аргументе передано `undefined`. 
+      При этом не важен порядок следования параметров - правее могут располагаться парметры и без 
+      значений по умолчанию.
+    */
+    function textLog(str = 'Привет!', reservedNumber) {
+        console.log(str);
+    }
+    textLog('Новая информация.');  // 'Новая информация.'
+    textLog();                     // 'Привет!'
+    textLog(undefined);            // 'Привет!'
+    textLog(false);                // false
+
+    // Можно использовать не только литералы, но и выражения:
+    function frameSize(width, heigth = width * 3/4 ) {
+        console.log('Размер кадра в пикселях:', width*heigth);
+    }
+    frameSize(1920);  // 2764800 - (ширина посчиталась на основании длины)
+    
+    // Значения по умолчанию вычисляются в момент вызова функции, а не статически:
+    var defaultValue = 0;
+    function testX(x = defaultValue) { console.log({x}) };
+    
+    testX(5); // 5
+    testX();  // 0
+    defaultValue = 7;
+    testX();  // 7, т.к. значение переменной `defaultValue` изменилось
+
+    console.groupEnd("Параметры по умолчанию");
+  console.groupEnd("Процедурное программирование"); 
+  } 
+} 
+
+{/* ФУНКЦИОНАЛЬНОЕ ПРОГРАММИРОВАНИЕ */
+  console.groupCollapsed("Функциональное программирование");
+
   {/* СОЗДАНИЕ СТРЕЛОЧНЫХ ФУНКЦИЙ 
       Стрелочная функция - это т.н. "синтаксический сахар" в ES6, который позволяет более 
       компактно записывать функциональные выражения.
@@ -235,10 +275,9 @@ https://learn.javascript.ru/function-expressions#function-expression-v-sravnenii
     console.groupCollapsed("Особые свойства стрелочных функций");
     
     console.groupEnd("Особые свойства стрелочных функций");
-  }   
 
   console.groupEnd("Функциональное программирование"); 
-
+  }   
 } 
 
 
