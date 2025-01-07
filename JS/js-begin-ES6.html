@@ -16,7 +16,12 @@
         браузера, способной запуститься на устаревшей операционной системе Windows XP. 
     </p>
     
-    <script src="js-begin-ES6.js"></script>
+    <script>
+        if (typeof Array.prototype.includes == "function") { 
+            // Проверка поддержки браузером нового метода includes, введённого в ES2016
+            document.write('<script src="js-begin-ES6.js"><\/script>'); 
+        } else document.write('<pre>Возможности ES6 похоже не поддерживаются!<\/pre>');
+    </script>
 
     <p> Вторая часть кода содержит синтаксические конструкции, появившиеся в более новых стандартах 
         (ES2016 и более новые). Попытка выполнить его в не самых новых версиях браузеров может 
@@ -32,7 +37,7 @@
     <script>
         if (typeof BigInt == "function") { // Проверка поддержки браузером нового типа BigInt
             document.write('<script src="js-begin-ES2016plus.js"><\/script>'); 
-        } else document.write('<pre>Расширенные возможности ES2016+ не поддерживаются!<\/pre>');
+        } else document.write('<pre>Возможности ES2016+ похоже не поддерживаются!<\/pre>');
     </script>
     
 </body>
