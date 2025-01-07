@@ -7,8 +7,8 @@
     (Alt + Shift + 0)  - развернуть.
     
 	То же самое можно сделать в Visual Studio Code:
-	(Ctrl + K) + (Ctrl + 2) - свернуть, 
-    (Ctrl + K) + (Ctrl + J) - развернуть      */
+	(Ctrl + K) и затем (Ctrl + 2) - свернуть, 
+    (Ctrl + K) и затем (Ctrl + J) - развернуть      */
     
 "use strict"; 
 function isOldBrowser() { // Функция проверки поддержки браузером некоторых новых методов
