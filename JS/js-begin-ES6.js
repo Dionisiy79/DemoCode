@@ -281,8 +281,7 @@ https://learn.javascript.ru/function-expressions#function-expression-v-sravnenii
         showArgs3(1,2,3,4,5,6);
         
     console.groupEnd("Спред-синтаксис и остаточные параметры");
-    console.groupEnd("Процедурное программирование");
-  } 
+  }  console.groupEnd("Процедурное программирование");
 } 
 
 {/* ФУНКЦИОНАЛЬНОЕ ПРОГРАММИРОВАНИЕ */
@@ -329,9 +328,7 @@ https://learn.javascript.ru/function-expressions#function-expression-v-sravnenii
     console.groupCollapsed("Особые свойства стрелочных функций");
     
     console.groupEnd("Особые свойства стрелочных функций");
-
-  console.groupEnd("Функциональное программирование"); 
-  }   
+  }  console.groupEnd("Функциональное программирование");
 } 
 
 
